@@ -1,0 +1,202 @@
+<!-- ////////////////////////////////////////////////////////////////////////////-->
+<html  xmlns:th="https://www.thymeleaf.org/">
+<body>
+<div th:fragment="apca_management">
+<fieldset id="apca_management" class="data-field-set">
+    <div class="table-responsive">
+        <table class="table entry-table table-bordered table-striped table-hover">
+            <thead>
+            <tr>
+                <th></th>
+                <th>APR-JUN</th>
+                <th>JUL-SEP</th>
+                <th>OCT-DEC</th>
+                <th>JAN-MAR</th>
+                <th>Total</th>
+                <th style="width:300px">Remarks</th >
+                <th>Total SAR</th>
+                <th>FY 1</th>
+                <th>FY 2</th>
+                <th>FY 3</th>
+                <th>FY 4</th>
+                <th>Cummulative 5-year period</th>
+                <th style="width:200px">Remarks</th >
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Governance strategy developed</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_governance_strategy', '', 'oct_dec',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_governance_strategy', '', 'jan_mar', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_governance_strategy', '', 'apr_jun',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_governance_strategy', '', 'jul_sept', 'none', true)}"></div ></td>
+                <td><p id="elno_governance_strategy__none_total" class="totals"></p></td>
+
+                <td><textarea  name="no_governance_strategy" id="no_governance_strategy" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_governance_strategy_fy', '', 'total_sar', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_governance_strategy_fy', '', 'fy1', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_governance_strategy_fy', '', 'fy2',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_governance_strategy_fy', '', 'fy3',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_governance_strategy_fy', '', 'fy4', 'none', true)}"></div ></td>
+               <td><p id="elno_governance_strategy_fy__none_total" class="totals"></p></td>
+                <td><textarea  name="no_governance_strategy_fy" id="no_governance_strategy_fy" class="form-control mini-textarea"></textarea></td>
+            </tr>
+
+
+            <tr>
+                <td># of new policies/policy amendments approved/ratified by BOD during this period</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_approved_ratified', '', 'oct_dec',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_approved_ratified', '', 'jan_mar',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_approved_ratified', '', 'apr_jun',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_approved_ratified', '', 'jul_sept',  'none', true)}"></div ></td>
+                <td><p id="elno_approved_ratified__none_total" class="totals"></p></td>
+
+                <td><textarea  name="no_approved_ratified" id="no_approved_ratified" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_approved_ratified_fy', '', 'total_sar',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_approved_ratified_fy', '', 'fy1', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_approved_ratified_fy', '', 'fy2', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_approved_ratified_fy', '', 'fy3',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_approved_ratified_fy', '', 'fy4',  'none', true)}"></div ></td>
+                <td><p id="elno_approved_ratified_fy__none_total" class="totals"></p></td>
+                <td><textarea  name="no_approved_ratified_fy" id="no_approved_ratified_fy" class="form-control mini-textarea"></textarea></td>
+            </tr>
+
+            <tr>
+                <td># of BOD meetings held</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_BOD_meetings_held', '', 'oct_dec',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_BOD_meetings_held', '', 'jan_mar', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_BOD_meetings_held', '', 'apr_jun', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_BOD_meetings_held', '', 'jul_sept', 'none', true)}"></div ></td>
+
+                <td><p id="elno_BOD_meetings_held__none_total" class="totals"></p></td>
+                <td><textarea  name="no_BOD_meetings_held" id="no_BOD_meetings_held" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_BOD_meetings_held_fy', '', 'total_sar',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_BOD_meetings_held_fy', '', 'fy1',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_BOD_meetings_held_fy', '', 'fy2',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_BOD_meetings_held_fy', '', 'fy3', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_BOD_meetings_held_fy', '', 'fy4', 'none', true)}"></div ></td>
+                <td><p id="elno_governance_strategy_fy__none_total" class="totals"></p></td>
+                <td><textarea  name="no_BOD_meetings_held_fy" id="no_BOD_meetings_held_fy" class="form-control mini-textarea"></textarea></td>
+            </tr>
+
+            <tr>
+                <td ># of SMT meetings held</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_members_recruited', '', 'oct_dec',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_members_recruited', '', 'jan_mar', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_members_recruited', '', 'apr_jun', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_members_recruited', '', 'jul_sept',  'none', true)}"></div ></td>
+
+                <td><p id="elno_members_recruited__none_total" class="totals"></p></td>
+                <td><textarea  name="no_members_recruited" id="no_members_recruited" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_members_recruited_fy', '', 'total_sar',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_members_recruited_fy', '', 'fy1', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_members_recruited_fy', '', 'fy2',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_members_recruited_fy','', 'fy3',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_members_recruited_fy', '', 'fy4',  'none', true)}"></div ></td>
+               <td><p id="elno_members_recruited_fy__none_total" class="totals"></p></td>
+                <td><textarea  name="no_members_recruited_fy" id="no_members_recruited_fy" class="form-control mini-textarea"></textarea></td>
+            </tr>
+
+            <tr>
+                <td>Annual report produced and published</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_annual_report_produced', '', 'oct_dec', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_annual_report_produced', '', 'jan_mar', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_annual_report_produced', '', 'apr_jun', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_annual_report_produced', '', 'jul_sept', 'none', true)}"></div ></td>
+
+                <td><p id="elno_annual_report_produced__none_total" class="totals"></p></td>
+                <td><textarea  name="no_annual_report_produced" id="no_annual_report_produced" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_annual_report_produced_fy', '', 'total_sar', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_annual_report_produced_fy', '', 'fy1', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_annual_report_produced_fy', '', 'fy2', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_annual_report_produced_fy', '', 'fy3', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_annual_report_produced_fy', '', 'fy4', 'none', true)}"></div ></td>
+                <td><p id="elno_annual_report_produced_fy__none_total" class="totals"></p></td>
+                <td><textarea  name="no_annual_report_produced_fy" id="no_annual_report_produced_fy" class="form-control mini-textarea"></textarea></td>
+            </tr>
+
+            <tr>
+                <td>Annual general meeting held</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_annual_general_meeting', '', 'oct_dec',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_annual_general_meeting', '', 'jan_mar',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_annual_general_meeting', '', 'apr_jun',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_annual_general_meeting', '', 'jul_sept', 'none', true)}"></div ></td>
+
+                <td><p id="elno_annual_general_meeting__none_total" class="totals"></p></td>
+                <td><textarea  name="no_annual_general_meeting" id="no_annual_general_meeting" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_annual_general_meeting_fy', '', 'total_sar', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_annual_general_meeting_fy', '', 'fy1', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_annual_general_meeting_fy', '', 'fy2',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_annual_general_meeting_fy', '', 'fy3',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_annual_general_meeting_fy', '', 'fy4',  'none', true)}"></div ></td>
+                <td><p id="elno_annual_general_meeting_fy__none_total" class="totals"></p></td>
+                <td><textarea  name="no_annual_general_meeting_fy" id="no_annual_general_meeting_fy" class="form-control mini-textarea"></textarea></td>
+            </tr>
+
+
+            <tr>
+                <td># of Annual BOD assessments done</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_annual_BOD_assessments', '', 'oct_dec',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_annual_BOD_assessments', '', 'jan_mar',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_annual_BOD_assessments', '', 'apr_jun', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_annual_BOD_assessments', '', 'jul_sept',  'none', true)}"></div ></td>
+
+                <td><p id="elno_annual_BOD_assessments__none_total" class="totals"></p></td>
+                <td><textarea  name="no_annual_BOD_assessments" id="no_annual_BOD_assessments_fy" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_annual_BOD_assessments_fy', '', 'total_sar', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_annual_BOD_assessments_fy', '', 'fy1',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_annual_BOD_assessments_fy', '', 'fy2',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_annual_BOD_assessments_fy', '', 'fy3', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_annual_BOD_assessments_fy', '', 'fy4',  'none', true)}"></div ></td>
+                <td><p id="elno_annual_BOD_assessments_fy__none_total" class="totals"></p></td>
+                <td><textarea  name="no_annual_BOD_assessments_fy" id="no_annual_BOD_assessments_fy" class="form-control mini-textarea"></textarea></td>
+            </tr>
+
+            <tr>
+                <td># of personal development plans for BOD implemented</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_personal_development', '', 'oct_dec',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_personal_development', '', 'jan_mar',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_personal_development', '', 'apr_jun',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_personal_development', '', 'jul_sept', 'none', true)}"></div ></td>
+
+                <td><p id="elno_personal_development__none_total" class="totals"></p></td>
+                <td><textarea  name="no_personal_development" id="no_personal_development" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_personal_development_fy', '', 'total_sar', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_personal_development_fy', '', 'fy1',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_personal_development_fy', '', 'fy2',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_personal_development_fy', '', 'fy3',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_personal_development_fy', '', 'fy4', 'none', true)}"></div ></td>
+                <td><p id="elno_personal_development_fy__none_total" class="totals"></p></td>
+                <td><textarea  name="no_personal_development_fy" id="no_personal_development_fy" class="form-control mini-textarea"></textarea></td>
+            </tr>
+
+            <tr>
+                <td># of regional and international engagements</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_regional_international', '', 'oct_dec',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_regional_international', '', 'jan_mar',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_regional_international', '', 'apr_jun',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_regional_international', '', 'jul_sept',  'none', true)}"></div ></td>
+
+                <td><p id="elno_regional_international__none_total" class="totals"></p></td>
+                <td><textarea  name="no_regional_international" id="no_regional_international_fy" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_regional_international_fy', '', 'total_sar',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_regional_international_fy','', 'fy1', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_regional_international_fy', '', 'fy2',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_regional_international_fy', '', 'fy3',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_regional_international_fy', '', 'fy4',  'none', true)}"></div ></td>
+                <td><p id="elno_regional_international_fy__none_total" class="totals"></p></td>
+                <td><textarea  name="no_regional_international_fy" id="no_regional_international_fy" class="form-control mini-textarea"></textarea></td>
+            </tr>
+
+
+
+
+            </tbody>
+        </table>
+    </div>
+</fieldset>
+</div >
+
+
+</body>
+</html>

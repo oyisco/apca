@@ -1,0 +1,199 @@
+<!-- ////////////////////////////////////////////////////////////////////////////-->
+<html  xmlns:th="https://www.thymeleaf.org/">
+<body>
+<div th:fragment="education">
+<fieldset id="education" class="data-field-set">
+    <div class="table-responsive">
+        <table class="table entry-table table-bordered table-striped table-hover">
+            <thead>
+            <tr>
+                <th></th>
+                <th>APR-JUN</th>
+                <th>JUL-SEP</th>
+                <th>OCT-DEC</th>
+                <th>JAN-MAR</th>
+                <th>Total</th>
+                <th style="width:300px">Remarks</th >
+                <th>Total SAR</th>
+                <th>FY 1</th>
+                <th>FY 2</th>
+                <th>FY 3</th>
+                <th>FY 4</th>
+                <th>Cummulative 5-year period</th>
+                <th style="width:200px">Remarks</th >
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td style="background-color:yellow;"> # of countries that developed specialist PC training programs during this period</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_countries_developed_specialist', '', 'oct_dec', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_countries_developed_specialist', '', 'jan_mar',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_countries_developed_specialist', '', 'apr_jun', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_countries_developed_specialist', '', 'jul_sept',  'none', true)}"></div ></td>
+
+                <td><p id="elno_countries_developed_specialist__none_total" class="totals"></p></td>
+
+                <td><textarea  name="no_countries_developed_specialist" id="no_countries_developed_specialist" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_countries_developed_specialist_fy', '', 'total_sar',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_countries_developed_specialist_fy', '', 'fy1',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_countries_developed_specialist_fy', '', 'fy2', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_countries_developed_specialist_fy', '', 'fy3',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_countries_developed_specialist_fy', '', 'fy4', 'none', true)}"></div ></td>
+                 <td><p id="elno_countries_developed_specialist_fy__none_total" class="totals"></p></td>
+
+                <td><textarea  name="no_countries_developed_specialist_fy" id="no_countries_developed_specialist_fy" class="form-control mini-textarea"></textarea></td>
+
+            </tr>
+
+
+            <tr>
+                <td style="background-color:yellow;"># of countries  that developed a national PC training package during this period</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_ountries_developed_national_PC', '', 'oct_dec', 'none',  true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_ountries_developed_national_PC', '', 'jan_mar', 'none',  true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_ountries_developed_national_PC', '', 'apr_jun', 'none',  true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_ountries_developed_national_PC', '', 'jul_sept', 'none',  true)}"></div ></td>
+
+                <td><p id="elno_ountries_developed_national_PC__none_total" class="totals"></p></td>
+
+                <td><textarea  name="no_countries_developed_specialist" id="no_ountries_developed_national_PC" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_ountries_developed_national_PC_fy', '', 'total_sar','none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_ountries_developed_national_PC_fy', '', 'fy1', 'none',true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_ountries_developed_national_PC_fy', '', 'fy2', 'none',  true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_ountries_developed_national_PC_fy', '', 'fy3', 'none',  true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_ountries_developed_national_PC_fy', '', 'fy4', 'none', true)}"></div ></td>
+                <td><p id="elno_ountries_developed_national_PC__none_total" class="totals"></p></td>
+                <td><textarea  name="no_ountries_developed_national_PC_fy" id="no_ountries_developed_national_PC_fy" class="form-control mini-textarea"></textarea></td>
+
+            </tr>
+
+            <tr>
+                <td style="background-color:yellow;"># of institutions/organizations provided with PC training materials, resources and equipment</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_institutions_organizations', '', 'oct_dec', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_institutions_organizations', '', 'jan_mar', 'none',  true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_institutions_organizations', '', 'apr_jun', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_institutions_organizations', '', 'jul_sept', 'none', true)}"></div ></td>
+
+                <td><p id="elno_institutions_organizations__none_total" class="totals"></p></td>
+
+                <td><textarea  name="no_institutions_organizations" id="no_institutions_organizations" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_institutions_organizations_fy', '', 'total_sar','none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_institutions_organizations_fy', '', 'fy1', 'none',  true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_institutions_organizations_fy', '', 'fy2', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_institutions_organizations_fy', '', 'fy3', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_institutions_organizations_fy', '', 'fy4', 'none',  true)}"></div ></td>
+                <td><p id="elno_institutions_organizations_fy__none_total" class="totals"></p></td>
+                <td><textarea  name="no_institutions_organizations_fy" id="no_institutions_organizations_fy" class="form-control mini-textarea"></textarea></td>
+
+            </tr>
+
+            <tr>
+                <td style="background-color:yellow;"># of care providers who received  pre-service PC training</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_received', '', 'oct_dec', 'none',  true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_received', '', 'jan_mar', 'none',  true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_received', '', 'apr_jun', 'none',  true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_received', '', 'jul_sept', 'none', true)}"></div ></td>
+
+                <td><p id="elno_care_providers_received__none_total" class="totals"></p></td>
+
+                <td><textarea  name="no_care_providers_received" id="no_care_providers_received" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_received_fy', '', 'total_sar',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_received_fy', '', 'fy1', 'none',  true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_received_fy', '', 'fy2', 'none',  true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_received_fy', '', 'fy3', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_received_fy', '', 'fy4', 'none', true)}"></div ></td>
+                <td><p id="elno_care_providers_received_fy__none_total" class="totals"></p></td>
+                <td><textarea  name="no_care_providers_received_fy" id="no_care_providers_received_fy" class="form-control mini-textarea"></textarea></td>
+
+            </tr>
+
+            <tr>
+                <td># of care providers who successfully completed an in-service basic PC training programme</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_successfully', '', 'oct_dec', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_successfully', '', 'jan_mar','none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_successfully', '', 'apr_jun',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_successfully', '', 'jul_sept', 'none', true)}"></div ></td>
+
+                <td><p id="elno_care_providers_successfully__none_total" class="totals"></p></td>
+
+                <td><textarea  name="no_care_providers_successfully" id="no_care_providers_successfully" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_successfully_fy', '', 'total_sar',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_successfully_fy', '', 'fy1', 'none',  true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_successfully_fy', '', 'fy2', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_successfully_fy', '', 'fy3', 'none',  true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_successfully_fy', '', 'fy4', 'none', true)}"></div ></td>
+                <td><p id="elno_care_providers_successfully_fy__none_total" class="totals"></p></td>
+                <td><textarea  name="no_care_providers_successfully_fy" id="no_care_providers_successfully_fy" class="form-control mini-textarea"></textarea></td>
+
+            </tr>
+
+            <tr>
+                <td style="background-color:yellow;"># of care providers supported to have specialist PC skills</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_supported', '', 'oct_dec', 'none',true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_supported', '', 'jan_mar', 'none',  true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_supported', '', 'apr_jun', 'none',  true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_supported', '', 'jul_sept', 'none',  true)}"></div ></td>
+
+                <td><p id="elno_care_providers_supported__none_total" class="totals"></p></td>
+                <td><textarea  name="no_care_providers_supported" id="no_care_providers_supported" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_supported_fy', '', 'total_sar', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_supported_fy', '', 'fy1', 'none',  true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_supported_fy', '', 'fy2', 'none',  true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_supported_fy', '', 'fy3', 'none',  true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_supported_fy', '', 'fy4', 'none',  true)}"></div ></td>
+                <td><p id="elno_care_providers_supported_fy__none_total" class="totals"></p></td>
+                <td><textarea  name="no_care_providers_supported_fy" id="no_care_providers_supported_fy" class="form-control mini-textarea"></textarea></td>
+
+            </tr>
+
+            <tr>
+                <td ># of care providers and educators supported to have PC training skills (ToT)</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_educators', '', 'oct_dec',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_educators', '', 'jan_mar', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_educators', '', 'apr_jun', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_educators', '', 'jul_sept', 'none', true)}"></div ></td>
+
+                <td><p id="el1__none_total" class="totals"></p></td>
+
+                <td><textarea  name="no_care_providers_supported" id="no_care_providers_educators" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_educators_fy', '', 'total_sar',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_educators_fy', '', 'fy1', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_educators_fy', '', 'fy2', 'none',  true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_educators_fy', '', 'fy3', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_care_providers_educators_fy', '', 'fy4', 'none', true)}"></div ></td>
+                <td><p id="elno_care_providers_educators_fy__none_total" class="totals"></p></td>
+                <td><textarea  name="no_care_providers_educators_fy" id="no_care_providers_educators_fy" class="form-control mini-textarea"></textarea></td>
+
+            </tr>
+
+            <tr>
+                <td># of community volunteers who successfully completed a PC training programme</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_community_volunteers', '', 'oct_dec', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_community_volunteers', '', 'jan_mar', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_community_volunteers', '', 'apr_jun', 'none',  true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_community_volunteers', '', 'jul_sept', 'none', true)}"></div ></td>
+
+                <td><p id="elno_community_volunteers__none_total" class="totals"></p></td>
+
+                <td><textarea  name="no_community_volunteers" id="no_community_volunteers" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_community_volunteers_fy','', 'total_sar', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_community_volunteers_fy', '', 'fy1', 'none',  true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_community_volunteers_fy', '', 'fy2', 'none',  true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_community_volunteers_fy', '', 'fy3', 'none',  true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_community_volunteers_fy', '', 'fy4', 'none',  true)}"></div ></td>
+                <td><p id="elno_community_volunteers_fy__none_total" class="totals"></p></td>
+                <td><textarea  name="no_community_volunteers_fy" id="no_community_volunteers_fy" class="form-control mini-textarea"></textarea></td>
+
+            </tr>
+
+
+
+
+            </tbody>
+        </table>
+    </div>
+</fieldset>
+</div >
+
+
+</body>
+</html>

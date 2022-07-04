@@ -1,0 +1,252 @@
+ <!-- ////////////////////////////////////////////////////////////////////////////-->
+<html  xmlns:th="https://www.thymeleaf.org/">
+<body>
+	<footer th:fragment="footer">
+	
+	
+		<!-- Modal -->
+    <div class="modal fade" id="changeSpokeModal2" data-backdrop="static" data-keyboard="false" aria-labelledby="modalLabel" role="dialog" tabindex="-1">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel" style="color:#444">Switch Site</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body " style="text-align:center">
+                
+                <div th:if="${role == 'ip' || role == 'state'}" class="row">
+			        <label class="col-sm-4 col-4">State</label >
+          			<div class="col-sm-6">
+		          		<select class="form-control select2Spoke withLoading" name="stateId" id="stateIdFooter">
+		            		<option value="">Select State</option>
+		            		<th:block th:each="state : ${states}">
+		          				<option th:value="${state.get('id')}" th:text="${state.get('name')}"></option>
+		          			</th:block>
+		            	</select >
+		            </div >
+			    </div>
+			    <br/>
+			    <div th:if="${role == 'state' || role=='ip'}" class="row"  id="lgaArea">
+			        <label class="col-sm-4 col-4">LGA</label >
+          			<div class="col-sm-6">
+		          		<select class="form-control select2Spoke withLoading" name="lgaId" id="lgaIdFooter">
+		          			<option value="">Select LGA</option>
+		            		
+		          			<th:block th:each="lga : ${lgas}">
+		          				<option th:value="${lga.get('lgaCode')}" th:text="${lga.get('lgaName')}"></option>
+		          			</th:block>
+		            		
+		            	</select >
+		            </div >
+		            <div class="col-sm-1">
+		            	<i class="fa fa-spinner fa-spin selectLoader hidden " id="lgaLoader"></i >
+		            </div >
+			    </div>
+			    <br/>
+			    <div th:if="${role == 'lga' || role == 'state' || role == 'ip' }" class="row" id="facilityArea">
+			        <label class="col-sm-4 col-4">Facility</label >
+          			<div class="col-sm-6">
+		          		<select class="form-control select2Spoke withLoading" name="facilityId" id="facilityIdFooter">
+		          			<option value="">Select Facility</option>
+		          			<th:block th:each="facility : ${facilities}">
+		          				<option th:value="${facility.get('id')}" th:text="${facility.get('facilityName')}"></option>
+		          			</th:block>
+		            		
+		            	</select >
+		            </div >
+		            <div class="col-sm-1">
+		            	<i class="fa fa-spinner fa-spin selectLoader hidden" id="facilityLoader"></i >
+		            </div >
+			    </div>
+			    <br/>
+          		<div class="row" id="spokeArea">
+          			<label class="col-sm-4 col-4">Spoke</label >
+          			<div class="col-sm-6">
+		          		<select class="form-control select2Spoke withLoading" name="spokeId" id="spokeIdFooter">
+		          			
+		            		<option value="">Select Spoke</option>
+		          			<th:block th:each="spoke : ${spokes}">
+		          				<option th:value="${spoke.get('id')}" th:text="${spoke.get('spokeName')}"></option>
+		          			</th:block>
+		            	</select >
+		            </div >
+		            <div class="col-sm-1"> <i class="fa fa-spinner fa-spin selectLoader hidden " id="spokeLoader"></i ></div >
+          		</div >
+          		
+            	
+           
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-warning" id="switchSpoke"><span id="switchSpokeText">Switch</span > <i class="fa fa-spinner fa-spin hidden" id="switchSpokeSpinner"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+     <div class="modal fade" id="supportModal" aria-labelledby="modalLabel" role="dialog" tabindex="-1">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title" id="modalLabel" style="color:#444">Contact Us</h1>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body " style="text-align:center">
+                
+               <div class="myContainer">
+	               
+				   <div class="row">
+				   		
+				   		<div class="col-sm-12"> <a class="success" href="mailto:support@phis3project.org.ng"><i class="fa fa-envelope "></i >&nbsp;&nbsp; <span style="font-size:20px; " >hisupport@phis3project.org.ng</span ></a></div >
+				   </div >
+	          		
+	          		
+            	
+               </div >
+			   
+           
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+		<footer><p class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2"><span class="float-md-left d-block d-md-inline-block">Copyright 2022  &copy; APCA Dashboard, Designed by Droplets LTD. All rights reserved.  v1.0.1</span><span class="float-md-right d-block d-md-inline-blockd-none d-lg-block"></span></p></footer>
+
+		<!-- BEGIN VENDOR JS-->
+    <script th:inline="javascript">
+	/*<![CDATA[*/
+	
+	    var endPoint = /*[[${apiEndPoint}]]*/ '';	
+	/*]]>*/
+	</script>
+    <script thsrc="@{../public/assets/js/axios.js}"></script>
+    <script th:src="@{../public/app-assets/vendors/js/vendors.min.js}"></script>
+    
+    <script th:src="@{../public/assets/js/timeago.min.js}"></script>
+    <script th:src="@{../public/app-assets/vendors/js/extensions/sweetalert.min.js}"></script>
+     <script th:src="@{../public/assets/js/select2.min.js}"></script>
+     <script type="text/javascript" th:src="@{../public/assets/js/jquery.validate.min.js}"></script>
+      <script th:src="@{../public/app-assets/vendors/js/pickers/dateTime/moment-with-locales.min.js}"></script>
+    <script th:src="@{../public/app-assets/vendors/js/pickers/daterange/daterangepicker.js}"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{../public/app-assets/vendors/css/extensions/sweetalert.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{../public/app-assets/vendors/css/pickers/daterange/daterangepicker.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{../public/app-assets/css/plugins/pickers/daterange/daterange.css}">
+    <!-- BEGIN VENDOR JS-->
+    <!-- BEGIN PAGE VENDOR JS-->
+    
+    
+    
+   
+    <!-- END PAGE VENDOR JS-->
+    <!-- BEGIN ROBUST JS-->
+    <script th:src="@{../public/app-assets/js/core/app-menu.js}"></script>
+    <script th:src="@{../public/app-assets/js/core/app.js}"></script>
+    <script type="text/javascript" th:src="@{../public/assets/js/homeScript.js}"></script>
+	
+    <script type="text/javascript" th:src="@{../public/assets/js/miscScript.js}"></script>
+    <script th:inline="javascript">
+	/*<![CDATA[*/
+	
+	    var stateId = /*[[${stateId}]]*/ '';	
+	    var lgaId = /*[[${lgaId}]]*/ '';	
+	    var facilityId = /*[[${facilityId}]]*/ '';
+	    var states = /*[[${states}]]*/ '';	
+	/*]]>*/
+	</script>
+    <script type="text/javascript">
+    
+    	stateId = parseInt(stateId);
+    	lgaId = parseInt(lgaId);
+    	facilityId = parseInt(facilityId);
+    	
+    	
+    	$(document).ready(function(){
+	
+	
+			$("#showSupportModal").click(function(e){
+		
+				$("#supportModal").modal("show");
+				e.preventDefault();
+				return false;
+			})
+			$("#stateIdFooter").change(function(e){
+				//do loading for any targets or anything that should populate based on state
+				
+				stateId = $("#stateIdFooter").val();
+				$("#lgaLoader").removeClass("hidden");
+				getLgas(stateId).then(function(data){
+					$("#lgaLoader").addClass("hidden");
+					var html = "<option value=''>Select LGA</option>";
+				
+					for(var i=0; i<data.length; i++)
+					{
+						html += "<option value='"+data[i]["lgaCode"]+"'>"+data[i]["lgaName"]+"</option>";
+					}
+			
+					$("#lgaIdFooter").html(html);
+					
+				});
+			})
+			
+			$("#lgaIdFooter").change(function(e){
+				var lgaId = $("#lgaIdFooter").val();
+				$("#facilityLoader").removeClass("hidden");
+				
+				if(allowAll == true)
+				{
+					$("#switchSpokeText").html("Switch to LGA");
+					switchType = "lga";
+				}
+				getFacilities(lgaId).then(function(data){
+					$("#facilityLoader").addClass("hidden");
+					var html = "<option value=''>Select Facility</option>";
+				
+					for(var i=0; i<data.length; i++)
+					{
+						html += "<option data-datim='"+data[i]["datimCode"]+"' value='"+data[i]["id"]+"'>"+data[i]["facilityName"]+"</option>";
+					}
+					
+					$("#facilityIdFooter").html(html);
+					
+				});
+			})
+			
+			
+			$("#facilityIdFooter").change(function(e){
+				$("#spokeLoader").removeClass("hidden");
+				if(allowAll == true)
+				{
+					$("#switchSpokeText").html("Switch to Facility");
+					switchType = "facility";
+				}
+				var facilityId = $("#facilityIdFooter").val();
+				getSpokesForFacility(facilityId).then(function(data){
+					var html = "<option value=''>Select Spoke</option>";
+					$("#spokeLoader").addClass("hidden");
+					for(var i=0; i<data.length; i++)
+					{
+						html += "<option  value='"+data[i]["id"]+"'>"+data[i]["spokeName"]+"</option>";
+					}
+					
+					$("#spokeIdFooter").html(html);
+					
+				});
+			})
+		})
+    </script>
+    
+    <!-- END ROBUST JS-->
+    <!-- BEGIN PAGE LEVEL JS-->
+    <!-- END PAGE LEVEL JS-->
+
+	 </footer >
+</body>
+</html>

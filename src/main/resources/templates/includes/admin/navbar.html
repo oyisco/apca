@@ -1,0 +1,83 @@
+<html  xmlns:th="https://www.thymeleaf.org/" >
+<body>
+	
+	 <div class="main-menu menu-fixed menu-dark menu-accordion    menu-shadow" data-scroll-to-active="true" th:fragment="navbar" >
+      <div class="main-menu-content">
+        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+          <li class=" nav-item" ><a th:href="@{/admin/dashboard}" ><i class="fa fa-home"></i><span class="menu-title" data-i18n="nav.dash.main">Dashboard </span></a>
+            
+          </li>
+          
+          <li class=" nav-item" th:if="${role == 'admin'}"><a href="#"><i class="fa fa-users"></i >&nbsp;<span class="menu-title" data-i18n="nav.page_layouts.main">Users</span></a>
+            <ul class="menu-content">
+              <li  class="" th:classappend="${currPage == 'add-user' ? 'active':''}"><a class="menu-item" th:href="@{/admin/add-user}" data-i18n="nav.page_layouts.1_column"><i class="fa fa-user"></i> Add User</a>
+              </li>
+              <li  class="" th:classappend="${currPage == 'view-users' ? 'active':''}"><a class="menu-item" th:href="@{/admin/view-users}" data-i18n="nav.page_layouts.1_column"><i class="fa fa-users"></i> View Users</a>
+              </li>
+             
+
+            </ul>
+          </li>
+          <li class=" nav-item"><a href="#"><i class="fa fa-linode"></i >&nbsp;<span class="menu-title" data-i18n="nav.page_layouts.main">Categories</span></a>
+            <ul class="menu-content">
+              <li  class="" th:if="${role == 'super'}" th:classappend="${currPage == 'add-category' ? 'active':''}"><a class="menu-item" th:href="@{/admin/add-category}" data-i18n="nav.page_layouts.1_column"><i class="fa fa-plus"></i> Add Category</a>
+              </li>
+              <li  class="" th:classappend="${currPage == 'view-categories' ? 'active':''}"><a class="menu-item" th:href="@{/admin/view-categories}" data-i18n="nav.page_layouts.1_column"><i class="fa fa-linode"></i> View Category</a>
+              </li>
+            
+            </ul>
+          </li>
+           <li class=" nav-item"><a href="#"><i class="fa fa-linode"></i >&nbsp;<span class="menu-title" data-i18n="nav.page_layouts.main">Sub Categories</span></a>
+            <ul class="menu-content">
+              <li  class="" th:if="${role == 'super'}" th:classappend="${currPage == 'add-subcategory' ? 'active':''}"><a class="menu-item" th:href="@{/admin/add-subcategory}" data-i18n="nav.page_layouts.1_column"><i class="fa fa-plus"></i> Add Sub Category</a>
+              </li>
+              <li  class="" th:classappend="${currPage == 'view-subcategories' ? 'active':''}"><a class="menu-item" th:href="@{/admin/view-subcategories}" data-i18n="nav.page_layouts.1_column"><i class="fa fa-linode"></i> View Sub categories</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+          <li class=" nav-item"><a href="#"><i class="fa fa-linode"></i >&nbsp;<span class="menu-title" data-i18n="nav.page_layouts.main">Spokes</span></a>
+            <ul class="menu-content">
+              <li  class="" th:if="${role == 'super'}" th:classappend="${currPage == 'add-spoke' ? 'active':''}"><a class="menu-item" th:href="@{/admin/add-spoke}" data-i18n="nav.page_layouts.1_column"><i class="fa fa-plus"></i> Add Spokes</a>
+              </li>
+              <li  class="" th:classappend="${currPage == 'view-spokes' ? 'active':''}"><a class="menu-item" th:href="@{/admin/view-spokes}" data-i18n="nav.page_layouts.1_column"><i class="fa fa-linode"></i> View Spokes</a>
+              </li>
+            
+            </ul>
+          </li>
+          <li class=" nav-item"><a href="#"><i class="fa fa-linode"></i >&nbsp;<span class="menu-title" data-i18n="nav.page_layouts.main">Validation Rules</span></a>
+            <ul class="menu-content">
+              <li  class="" th:if="${role == 'super'}" th:classappend="${currPage == 'add-validation' ? 'active':''}"><a class="menu-item" th:href="@{/admin/add-validation}" data-i18n="nav.page_layouts.1_column"><i class="fa fa-plus"></i> Add Rule</a>
+              </li>
+              <li  class="" th:classappend="${currPage == 'view-validations' ? 'active':''}"><a class="menu-item" th:href="@{/admin/view-validations}" data-i18n="nav.page_layouts.1_column"><i class="fa fa-linode"></i> View Rules</a>
+              </li>
+            
+            </ul>
+          </li>
+          <li class=" nav-item"><a href="#"><i class="fa fa-bar-chart"></i >&nbsp;<span class="menu-title" data-i18n="nav.page_layouts.main">Report</span></a>
+            <ul class="menu-content">
+              <li  class="" th:classappend="${currPage == 'activity-statistics' ? 'active':''}"><a class="menu-item" th:href="@{/admin/activity-statistics}" data-i18n="nav.page_layouts.1_column"> Activity Report</a>
+              </li>
+              <li  class="" th:classappend="${currPage == 'cpmtct-report' ? 'active':''}"><a class="menu-item" th:href="@{/admin/cpmtct-report2}" data-i18n="nav.page_layouts.1_column"> cPMTCT Report</a>
+              </li>
+              <li  class="" th:classappend="${currPage == 'cpmtct-report-disaggregated' ? 'active':''}"><a class="menu-item" th:href="@{/admin/cpmtct-report-disaggregated}" data-i18n="nav.page_layouts.1_column"> cPMTCT Report(Disagg)</a>
+              </li>
+              <li  class="" th:classappend="${currPage == 'covid-daily-report' ? 'active':''}"><a class="menu-item" th:href="@{/admin/covid-daily-report}" data-i18n="nav.page_layouts.1_column"> COVID-19 Daily Report</a>
+              </li>
+              <li  class="" th:classappend="${currPage == 'dqa-report' ? 'active':''}"><a class="menu-item" th:href="@{/admin/dqa-report}" data-i18n="nav.page_layouts.1_column"> DQA Report</a>
+              </li>
+               <!--<li  class="" th:classappend="${currPage == 'covid-weekly-report' ? 'active':''}"><a class="menu-item" th:href="@{/admin/covid-weekly-report}" data-i18n="nav.page_layouts.1_column"> COVID-19 Weekly Report</a>
+              </li>-->
+              
+              <li  class="" th:classappend="${currPage == 'hts-report' ? 'active':''}"><a class="menu-item" th:href="@{/admin/hts-report}" data-i18n="nav.page_layouts.1_column"> HTS Report</a>
+              </li>
+              
+            </ul>
+          </li>
+     
+        </ul>
+      </div>
+    </div>
+</body>
+</html>

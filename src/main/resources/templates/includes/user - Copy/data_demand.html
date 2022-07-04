@@ -1,0 +1,53 @@
+<!-- ////////////////////////////////////////////////////////////////////////////-->
+<html  xmlns:th="https://www.thymeleaf.org/">
+<body>
+<div th:fragment="data-demand">
+    <div class="table-responsive">
+        <table class="table entry-table table-bordered table-striped table-hover">
+            <thead>
+            <tr>
+                <th></th>
+                <th>APR-JUN</th>
+                <th>JUL-SEP</th>
+                <th>OCT-DEC</th>
+                <th>JAN-MAR</th>
+                <th>Total</th>
+                <th>Remarks</th>
+            </tr>
+            </thead>
+            <tbody>
+
+
+            <tr>
+                <td style="background-color:yellow;"># of stakeholders for whom information needs have been mapped and best formats for disseminating information are identified.</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_stakeholders_information', 'oct_dec', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_stakeholders_information', 'jan_mar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_stakeholders_information', 'apr_jun', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_stakeholders_information', 'jul_sept', 'none', 'none', true)}"></div ></td>
+
+                <td><p id="el1__none_total" class="totals"></p></td>
+            </tr>
+
+
+            <tr>
+                <td style="background-color:yellow;"># of partner institutions/countries who have received feedback on studies conducted in their institutions / countries.</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_institutions_countries', 'oct_dec', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_institutions_countries', 'jan_mar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_institutions_countries', 'apr_jun', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_institutions_countries', 'jul_sept', 'none', 'none', true)}"></div ></td>
+
+                <td><p id="el1__none_total" class="totals"></p></td>
+            </tr>
+
+
+
+
+
+            </tbody>
+        </table>
+    </div>
+</div >
+
+
+</body>
+</html>

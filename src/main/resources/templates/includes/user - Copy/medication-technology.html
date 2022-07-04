@@ -1,0 +1,80 @@
+<!-- ////////////////////////////////////////////////////////////////////////////-->
+<html  xmlns:th="https://www.thymeleaf.org/">
+<body>
+<div th:fragment="medication-technology">
+    <div class="table-responsive">
+        <table class="table entry-table table-bordered table-striped table-hover">
+            <thead>
+            <tr>
+                <th></th>
+                <th>APR-JUN</th>
+                <th>JUL-SEP</th>
+                <th>OCT-DEC</th>
+                <th>JAN-MAR</th>
+                <th>Total</th>
+                <th>Remarks</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td style="background-color:yellow;"> # of  legal prescribers trained on palliative care medications and opioids</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_legal_prescribers', 'oct_dec', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_legal_prescribers', 'jan_mar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_legal_prescribers', 'apr_jun', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_legal_prescribers', 'jul_sept', 'none', 'none', true)}"></div ></td>
+
+                <td><p id="el1__none_total" class="totals"></p></td>
+            </tr>
+
+
+            <tr>
+                <td style="background-color:yellow;"> # of countries with essential  PC medications included on the national essential medicines list/policy/guidelines during this period</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_ountries_essential_medications', 'oct_dec', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_ountries_essential_medications', 'jan_mar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_ountries_essential_medications', 'apr_jun', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_ountries_essential_medications', 'jul_sept', 'none', 'none', true)}"></div ></td>
+
+                <td><p id="el1__none_total" class="totals"></p></td>
+            </tr>
+
+            <tr>
+                <td style="background-color:yellow;"># of African countries submitting annual returns for morphine</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_african_countries_submitting', 'oct_dec', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_african_countries_submitting', 'jan_mar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_african_countries_submitting', 'apr_jun', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_african_countries_submitting', 'jul_sept', 'none', 'none', true)}"></div ></td>
+
+                <td><p id="el1__none_total" class="totals"></p></td>
+            </tr>
+
+            <tr>
+                <td style="background-color:yellow;"># of people accessing palliative care medications</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_people_accessing_palliative_care', 'oct_dec', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_people_accessing_palliative_care', 'jan_mar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_people_accessing_palliative_care', 'apr_jun', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_people_accessing_palliative_care', 'jul_sept', 'none', 'none', true)}"></div ></td>
+
+                <td><p id="el1__none_total" class="totals"></p></td>
+            </tr>
+
+            <tr>
+                <td># of equipment purchased (capital improvement)</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_equipment_purchased', 'oct_dec', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_equipment_purchased', 'jan_mar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_equipment_purchased', 'apr_jun', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_equipment_purchased', 'jul_sept', 'none', 'none', true)}"></div ></td>
+
+                <td><p id="el1__none_total" class="totals"></p></td>
+            </tr>
+
+
+
+
+            </tbody>
+        </table>
+    </div>
+</div >
+
+
+</body>
+</html>

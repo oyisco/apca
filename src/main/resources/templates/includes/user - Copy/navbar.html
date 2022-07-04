@@ -1,0 +1,43 @@
+<html  xmlns:th="https://www.thymeleaf.org/" >
+<body>
+	
+	 <div class="main-menu menu-fixed menu-dark menu-accordion    menu-shadow" data-scroll-to-active="true" th:fragment="navbar" >
+      <div class="main-menu-content">
+        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+          <li class=" nav-item" ><a th:href="@{/user/welcome}" ><i class="fa fa-home"></i><span class="menu-title" data-i18n="nav.dash.main">Home </span></a>
+            
+          </li>
+          <li class=" nav-item" ><a href="#" ><i class="fa fa-bar-chart"></i><span class="menu-title" data-i18n="nav.dash.main">Dashboard </span></a>
+          </li>
+<!--        <li class=" nav-item" ><a href="#" ><i class="fa fa-bar-chart"></i><span class="menu-title" data-i18n="nav.dash.main">Reports </span></a>-->
+<!--          </li>-->
+          
+          <li class=" nav-item" th:if="${role == 'admin'}"><a href="#"><i class="fa fa-users"></i >&nbsp;<span class="menu-title" data-i18n="nav.page_layouts.main">Users</span></a>
+            <ul class="menu-content">
+              <li  class="" th:classappend="${currPage == 'add-user' ? 'active':''}"><a class="menu-item" th:href="@{/user/add-user}" data-i18n="nav.page_layouts.1_column"><i class="fa fa-user"></i> Add User</a>
+              </li>
+              <li  class="" th:classappend="${currPage == 'view-users' ? 'active':''}"><a class="menu-item" th:href="@{/user/view-users}" data-i18n="nav.page_layouts.1_column"><i class="fa fa-users"></i> View Users</a>
+              </li>
+             
+
+            </ul>
+          </li>
+         
+          
+          <li class=""><span data-i18n="nav.category.layouts"><hr style="background-color:#fff !important;"/></span>
+          </li>
+          <li class=" nav-item"><a href="#"><img th:src="@{../public/images/cpmtct-white.png}" width="20" />&nbsp;<span class="menu-title" data-i18n="nav.page_layouts.main">Data entry</span></a>
+            <ul class="menu-content">
+              <li  class="" th:classappend="${currPage == 'data-entry' ? 'active':''}"><a class="menu-item" th:href="@{/user/data-entry}" data-i18n="nav.page_layouts.1_column"><i class="fa fa-calendar"></i> Data Entry</a>
+              </li>
+             
+
+            </ul>
+          </li >
+          
+          
+        </ul>
+      </div>
+    </div>
+</body>
+</html>

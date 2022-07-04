@@ -1,0 +1,46 @@
+ <!-- ////////////////////////////////////////////////////////////////////////////-->
+<html  xmlns:th="https://www.thymeleaf.org/">
+<body>
+
+
+	<footer th:fragment="footer">
+	    <footer><p class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2"><span class="float-md-left d-block d-md-inline-block">Copyright 2021  &copy; APCA Dashboard, Designed by Droplets LTD. All rights reserved.  v1.0.1</span><span class="float-md-right d-block d-md-inline-blockd-none d-lg-block"></span></p></footer>
+
+    <!-- BEGIN VENDOR JS-->
+    
+    <script th:inline="javascript">
+	/*<![CDATA[*/
+	
+	    var endPoint = /*[[${apiEndPoint}]]*/ '';	
+	/*]]>*/
+	</script>
+	<script type="text/javascript" th:src="@{../public/assets/js/constants.js}"></script>
+    <script th:src="@{../public/app-assets/vendors/js/vendors.min.js}"></script>
+    <script th:src="@{../public/assets/js/axios.js}"></script>
+    <script th:src="@{../public/assets/js/timeago.min.js}"></script>
+    <script th:src="@{../public/app-assets/vendors/js/extensions/sweetalert.min.js}"></script>
+     <script th:src="@{../public/assets/js/select2.min.js}"></script>
+     <script type="text/javascript" th:src="@{../public/assets/js/jquery.validate.min.js}"></script>
+      <script th:src="@{../public/app-assets/vendors/js/pickers/dateTime/moment-with-locales.min.js}"></script>
+    <script th:src="@{../public/app-assets/vendors/js/pickers/daterange/daterangepicker.js}"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{../public/app-assets/vendors/css/extensions/sweetalert.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{../public/app-assets/vendors/css/pickers/daterange/daterangepicker.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{../public/app-assets/css/plugins/pickers/daterange/daterange.css}">
+    <!-- BEGIN VENDOR JS-->
+    <!-- BEGIN PAGE VENDOR JS-->
+    
+    
+    
+   
+    <!-- END PAGE VENDOR JS-->
+    <!-- BEGIN ROBUST JS-->
+    <script th:src="@{../public/app-assets/js/core/app-menu.js}"></script>
+    <script th:src="@{../public/app-assets/js/core/app.js}"></script>
+    
+    <!-- END ROBUST JS-->
+    <!-- BEGIN PAGE LEVEL JS-->
+    <!-- END PAGE LEVEL JS-->
+
+	 </footer >
+</body>
+</html>

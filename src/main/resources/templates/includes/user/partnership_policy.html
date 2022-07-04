@@ -1,0 +1,121 @@
+<!-- ////////////////////////////////////////////////////////////////////////////-->
+<html  xmlns:th="https://www.thymeleaf.org/">
+<body>
+<div th:fragment="partnership">
+<fieldset id="partnership_policy" class="data-field-set">
+    <div class="table-responsive">
+        <table class="table entry-table table-bordered table-striped table-hover">
+            <thead>
+            <tr>
+                <th></th>
+                <th>APR-JUN</th>
+                <th>JUL-SEP</th>
+                <th>OCT-DEC</th>
+                <th>JAN-MAR</th>
+                <th>Total</th>
+                <th style="width:300px">Remarks</th >
+                <th>Total SAR</th>
+                <th>FY 1</th>
+                <th>FY 2</th>
+                <th>FY 3</th>
+                <th>FY 4</th>
+                <th>Cummulative 5-year period</th>
+                <th style="width:200px">Remarks</th >
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>A partnership database developed</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_partnership_database', '', 'oct_dec',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_partnership_database', '', 'jan_mar',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_partnership_database', '', 'apr_jun',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_partnership_database', '', 'jul_sept', 'none', true)}"></div ></td>
+
+                <td><p id="elno_partnership_database__none_total" class="totals"></p></td>
+
+                <td><textarea  name="no_partnership_database" id="no_partnership_database" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_partnership_database_fy', '', 'total_sar','none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_partnership_database_fy', '', 'fy1', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_partnership_database_fy', '', 'fy2', 'none',  true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_partnership_database_fy', '', 'fy3', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_partnership_database_fy', '', 'fy4', 'none',  true)}"></div ></td>
+                 <td><p id="elno_partnership_database_fy__none_total" class="totals"></p></td>
+                <td><textarea  name="no_partnership_database_fy" id="no_partnership_database_fy" class="form-control mini-textarea"></textarea></td>
+
+            </tr>
+
+
+            <tr>
+                <td >A partnership framework developed for APCA</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_no_partnership_framework', '', 'oct_dec',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_no_partnership_framework', '', 'jan_mar', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_no_partnership_framework', '', 'apr_jun', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_no_partnership_framework', '', 'jul_sept',  'none', true)}"></div ></td>
+
+                <td><p id="elno_no_partnership_framework__none_total" class="totals"></p></td>
+
+                <td><textarea  name="no_no_partnership_framework" id="no_no_partnership_framework_fy" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_no_partnership_framework_fy', '', 'total_sar', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_no_partnership_framework_fy', '', 'fy1', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_no_partnership_framework_fy', '', 'fy2',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_no_partnership_framework_fy', '', 'fy3',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_no_partnership_framework_fy', '', 'fy4', 'none', true)}"></div ></td>
+                <td><p id="elno_no_partnership_framework_fy__none_total" class="totals"></p></td>
+                <td><textarea  name="no_no_partnership_framework_fy" id="no_no_partnership_framework_fy" class="form-control mini-textarea"></textarea></td>
+
+            </tr>
+
+            <tr>
+                <td ># of new partnerships developed during this period</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_partnerships_developed ', '', 'oct_dec',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_partnerships_developed', '', 'jan_mar',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_partnerships_developed','',  'apr_jun', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_partnerships_developed','',  'jul_sept', 'none', true)}"></div ></td>
+
+                <td><p id="elno_partnerships_developed__none_total" class="totals"></p></td>
+
+                <td><textarea  name="no_partnerships_developed" id="no_partnerships_developed" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_partnerships_developed_fy', '','total_sar', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_partnerships_developed_fy','', 'fy1',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_partnerships_developed_fy','', 'fy2',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_partnerships_developed_fy', '','fy3', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_partnerships_developed_fy','', 'fy4',  'none', true)}"></div ></td>
+                <td><p id="elno_partnership_database_fy__none_total" class="totals"></p></td>
+                <td><textarea  name="no_partnerships_developed_fy" id="no_partnerships_developed_fy" class="form-control mini-textarea"></textarea></td>
+
+            </tr>
+
+            <tr>
+                <td >A capacity building framework developed</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_capacity_building','', 'oct_dec',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_capacity_building','', 'jan_mar',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_capacity_building','', 'apr_jun',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_capacity_building','', 'jul_sept',  'none', true)}"></div ></td>
+
+                <td><p id="elno_capacity_building__none_total" class="totals"></p></td>
+
+
+                <td><textarea  name="no_capacity_building" id="no_capacity_building" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_capacity_building_fy','', 'total_sar',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_capacity_building_fy', '','fy1',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_capacity_building_fy','', 'fy2',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_capacity_building_fy','', 'fy3',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_capacity_building_fy','', 'fy4', 'none', true)}"></div ></td>
+                <td><p id="elno_capacity_building_fy__none_total" class="totals"></p></td>
+                <td><textarea  name="no_capacity_building_fy" id="no_capacity_building_fy" class="form-control mini-textarea"></textarea></td>
+
+            </tr>
+
+
+
+
+
+            </tbody>
+        </table>
+    </div>
+</fieldset>
+</div >
+
+
+</body>
+</html>

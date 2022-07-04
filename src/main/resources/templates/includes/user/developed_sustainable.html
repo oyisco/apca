@@ -1,0 +1,209 @@
+<!-- ////////////////////////////////////////////////////////////////////////////-->
+<html  xmlns:th="https://www.thymeleaf.org/">
+<body>
+<div th:fragment="developed">
+    <div class="table-responsive">
+        <table class="table entry-table table-bordered table-striped table-hover">
+            <thead>
+            <tr>
+                <th></th>
+                <th>APR-JUN</th>
+                <th>JUL-SEP</th>
+                <th>OCT-DEC</th>
+                <th>JAN-MAR</th>
+                <th>Total</th>
+                <th style="width:300px">Remarks</th >
+                <th>Total SAR</th>
+                <th>FY 1</th>
+                <th>FY 2</th>
+                <th>FY 3</th>
+                <th>FY 4</th>
+                <th>Cummulative 5-year period</th>
+                <th style="width:200px">Remarks</th >
+            </tr>
+            </thead>
+            <tbody>
+
+
+            <tr>
+                <td > # of financial sustainability frameworks developed</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_financial_sustainability', 'oct_dec', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_financial_sustainability', 'jan_mar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_financial_sustainability', 'apr_jun', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_financial_sustainability', 'jul_sept', 'none', 'none', true)}"></div ></td>
+
+                <td><p id="el1__none_total" class="totals"></p></td>
+                <td><textarea  name="no_financial_sustainability" id="no_financial_sustainability" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_financial_sustainability', 'total_sar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_financial_sustainability', 'fy1', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_financial_sustainability', 'fy2', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_financial_sustainability', 'fy3', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_financial_sustainability', 'fy4', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_financial_sustainability', 'cummulative', 'none', 'none', true)}"></div ></td>
+                <td><textarea  name="no_financial_sustainability_fy" id="no_financial_sustainability_fy" class="form-control mini-textarea"></textarea></td>
+            </tr>
+
+
+            <tr>
+                <td >A grants database developed</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_grants_database', 'oct_dec', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_grants_database', 'jan_mar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_grants_database', 'apr_jun', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_grants_database', 'jul_sept', 'none', 'none', true)}"></div ></td>
+
+                <td><p id="el1__none_total" class="totals"></p></td>
+
+                <td><textarea  name="no_grants_database" id="no_grants_database" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_grants_database', 'total_sar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_grants_database', 'fy1', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_grants_database', 'fy2', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_grants_database', 'fy3', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_grants_database', 'fy4', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_grants_database', 'cummulative', 'none', 'none', true)}"></div ></td>
+                <td><textarea  name="no_grants_database_fy" id="no_grants_database_fy" class="form-control mini-textarea"></textarea></td>
+
+            </tr>
+
+            <tr>
+                <td ># of new partners acquired per year</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_partnes_acquired', 'oct_dec', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_partnes_acquired', 'jan_mar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_partnes_acquired', 'apr_jun', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_partnes_acquired', 'jul_sept', 'none', 'none', true)}"></div ></td>
+
+                <td><p id="el1__none_total" class="totals"></p></td>
+
+                <td><textarea  name="no_partnes_acquired" id="no_partnes_acquired" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_partnes_acquired', 'total_sar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_partnes_acquired', 'fy1', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_partnes_acquired', 'fy2', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_partnes_acquired', 'fy3', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_partnes_acquired', 'fy4', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_partnes_acquired', 'cummulative', 'none', 'none', true)}"></div ></td>
+                <td><textarea  name="no_partnes_acquired_fy" id="no_partnes_acquired_fy" class="form-control mini-textarea"></textarea></td>
+            </tr>
+
+            <tr>
+                <td > # of new income generating activities for APCA</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_income_generating', 'oct_dec', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_income_generating', 'jan_mar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_income_generating', 'apr_jun', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_income_generating', 'jul_sept', 'none', 'none', true)}"></div ></td>
+
+                <td><p id="el1__none_total" class="totals"></p></td>
+
+                <td><textarea  name="no_income_generating" id="no_income_generating" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_income_generating', 'total_sar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_income_generating', 'fy1', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_income_generating', 'fy2', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_income_generating', 'fy3', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_income_generating', 'fy4', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_income_generating', 'cummulative', 'none', 'none', true)}"></div ></td>
+                <td><textarea  name="no_income_generating_fy" id="no_income_generating_fy" class="form-control mini-textarea"></textarea></td>
+            </tr>
+
+            <tr>
+                <td >New donors per year</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_donors_year', 'oct_dec', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_donors_year', 'jan_mar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_donors_year', 'apr_jun', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_donors_year', 'jul_sept', 'none', 'none', true)}"></div ></td>
+
+                <td><p id="el1__none_total" class="totals"></p></td>
+
+                <td><textarea  name="no_donors_year" id="no_donors_year" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_donors_year', 'total_sar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_donors_year', 'fy1', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_donors_year', 'fy2', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_donors_year', 'fy3', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_donors_year', 'fy4', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_donors_year', 'cummulative', 'none', 'none', true)}"></div ></td>
+                <td><textarea  name="no_donors_year_fy" id="no_donors_year_fy" class="form-control mini-textarea"></textarea></td>
+            </tr>
+
+            <tr>
+                <td >A functional endowment plan developed</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_functional_endowment', 'oct_dec', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_functional_endowment', 'jan_mar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_functional_endowment', 'apr_jun', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_functional_endowment', 'jul_sept', 'none', 'none', true)}"></div ></td>
+
+                <td><p id="el1__none_total" class="totals"></p></td>
+                <td><textarea  name="no_functional_endowment" id="no_functional_endowment" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_functional_endowment', 'total_sar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_functional_endowment', 'fy1', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_functional_endowment', 'fy2', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_functional_endowment', 'fy3', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_functional_endowment', 'fy4', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_functional_endowment', 'cummulative', 'none', 'none', true)}"></div ></td>
+                <td><textarea  name="no_functional_endowment_fy" id="no_functional_endowment_fy" class="form-control mini-textarea"></textarea></td>
+            </tr>
+
+            <tr>
+                <td >%age change in funding (active grants) during this period</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_change_funding', 'oct_dec', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_change_funding', 'jan_mar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_change_funding', 'apr_jun', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_change_funding', 'jul_sept', 'none', 'none', true)}"></div ></td>
+                <td><p id="el1__none_total" class="totals"></p></td>
+
+                <td><textarea  name="no_change_funding" id="no_change_funding" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_change_funding', 'total_sar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_change_funding', 'fy1', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_change_funding', 'fy2', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_change_funding', 'fy3', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_change_funding', 'fy4', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_change_funding', 'cummulative', 'none', 'none', true)}"></div ></td>
+                <td><textarea  name="no_change_funding_fy" id="no_change_funding_fy" class="form-control mini-textarea"></textarea></td>
+            </tr>
+
+            <tr>
+                <td >Amount of unrestricted funds generated during this period </td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_unrestricted_fund', 'oct_dec', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_unrestricted_fund', 'jan_mar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_unrestricted_fund', 'apr_jun', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_unrestricted_fund', 'jul_sept', 'none', 'none', true)}"></div ></td>
+
+                <td><p id="el1__none_total" class="totals"></p></td>
+                <td><textarea  name="no_unrestricted_fund" id="no_unrestricted_fund" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_unrestricted_fund', 'total_sar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_unrestricted_fund', 'fy1', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_unrestricted_fund', 'fy2', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_unrestricted_fund', 'fy3', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_unrestricted_fund', 'fy4', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_unrestricted_fund', 'cummulative', 'none', 'none', true)}"></div ></td>
+                <td><textarea  name="no_unrestricted_fund_fy" id="no_unrestricted_fund_fy" class="form-control mini-textarea"></textarea></td>
+            </tr>
+
+
+
+            <tr>
+                <td > # of financial audits conducted (Disaggregate by Statutory, donor)</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_inancial_audits', 'oct_dec', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_inancial_audits', 'jan_mar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_inancial_audits', 'apr_jun', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_inancial_audits', 'jul_sept', 'none', 'none', true)}"></div ></td>
+
+                <td><p id="el1__none_total" class="totals"></p></td>
+                <td><textarea  name="no_inancial_audits" id="no_inancial_audits" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_inancial_audits', 'total_sar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_inancial_audits', 'fy1', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_inancial_audits', 'fy2', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_inancial_audits', 'fy3', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_inancial_audits', 'fy4', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_inancial_audits', 'cummulative', 'none', 'none', true)}"></div ></td>
+                <td><textarea  name="no_inancial_audits_fy" id="no_inancial_audits_fy" class="form-control mini-textarea"></textarea></td>
+            </tr>
+
+
+
+
+
+            </tbody>
+        </table>
+    </div>
+</div >
+
+
+</body>
+</html>

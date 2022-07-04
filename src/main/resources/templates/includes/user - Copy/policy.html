@@ -1,0 +1,88 @@
+<!-- ////////////////////////////////////////////////////////////////////////////-->
+<html  xmlns:th="https://www.thymeleaf.org/">
+<body>
+<div th:fragment="policy">
+    <div class="table-responsive">
+        <table class="table entry-table table-bordered table-striped table-hover">
+            <thead>
+            <tr>
+                <th></th>
+                <th>APR-JUN</th>
+                <th>JUL-SEP</th>
+                <th>OCT-DEC</th>
+                <th>JAN-MAR</th>
+                <th>Total</th>
+                <th>Remarks</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td> # of targeted countries with PC integrated/recognized into national frameworks/health plans /stand alone</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_targeted', 'oct_dec', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_targeted', 'jan_mar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_targeted', 'apr_jun', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_targeted', 'jul_sept', 'none', 'none', true)}"></div ></td>
+
+                <td><p id="el1__none_total" class="totals"></p></td>
+            </tr>
+
+
+            <tr>
+                <td> # of palliative care advocacy activities/meetings  conducted to integrate PC into health policies and guidelines.</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_palliative_care', 'oct_dec', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_palliative_care', 'jan_mar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_palliative_care', 'apr_jun', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_palliative_care', 'jul_sept', 'none', 'none', true)}"></div ></td>
+
+                <td><p id="el1__none_total" class="totals"></p></td>
+            </tr>
+
+            <tr>
+                <td># of people who attended policy related activities/meetings </td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_people_attended_policy', 'oct_dec', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_people_attended_policy', 'jan_mar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_people_attended_policy', 'apr_jun', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_people_attended_policy', 'jul_sept', 'none', 'none', true)}"></div ></td>
+
+                <td><p id="el1__none_total" class="totals"></p></td>
+            </tr>
+
+            <tr>
+                <td> # of countries with  active national PC advocacy teams</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_countries_active_national_policy', 'oct_dec', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_countries_active_national_policy', 'jan_mar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_countries_active_national_policy', 'apr_jun', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_countries_active_national_policy', 'jul_sept', 'none', 'none', true)}"></div ></td>
+
+                <td><p id="el1__none_total" class="totals"></p></td>
+            </tr>
+
+            <tr>
+                <td> # of countries including  PC indicators into national HMIS</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_countries_including_PC_indicators', 'oct_dec', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_countries_including_PC_indicators', 'jan_mar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_countries_including_PC_indicators', 'apr_jun', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_countries_including_PC_indicators', 'jul_sept', 'none', 'none', true)}"></div ></td>
+
+                <td><p id="el1__none_total" class="totals"></p></td>
+            </tr>
+
+            <tr>
+                <td># of countries that conducted a national PC situational analysis during this period</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_countries_conducted_national_PC ', 'oct_dec', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_countries_conducted_national_PC', 'jan_mar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_countries_conducted_national_PC', 'apr_jun', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_countries_conducted_national_PC', 'jul_sept', 'none', 'none', true)}"></div ></td>
+
+                <td><p id="el1__none_total" class="totals"></p></td>
+            </tr>
+
+
+            </tbody>
+        </table>
+    </div>
+</div >
+
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+@font-face {
+  font-family: "EucidCircularB-Regular";
+  src: url("/font/EuclidCircularB-Regular.eot");
+  src: url("/font/EuclidCircularB-Regular.woff") format("woff"),
+  url("/font/EuclidCircularB-Regular.otf") format("opentype"),
+  url("/font/EuclidCircularB-Regular.svg#filename") format("svg");
+}
+  
+body{
+  
+  font-family: 'EucidCircularB-Regular', Arial, sans-serif;
+  font-weight:normal;
+  font-style:normal;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale
+  
+}
+.ls-bg
+{
+    margin-top:0px !important;
+}
+.align-center
+{
+  text-align:center;
+}
+.bigText{
+  font-size:36px;
+}
+.biggerText{
+  font-size:55px;
+  line-height:50px !important;
+}
+.whiteText{
+  color:#fff;
+}
+.midCenter
+{
+  width:95%;
+  margin:0 auto;
+}
+.mediumText
+{
+  font-size:28px;
+  line-height:35px;
+  font-weight:lighter;
+}
+.normalText
+{
+  font-size:22px;
+  line-height:28px;
+}
+.smallText{
+  font-size:16px;
+}
+.align-left
+{
+  text-align: left;
+}
+.grey{
+  color:#999;
+}
+.darktext{
+  color:#222;
+}
+.bold{
+  font-weight: bold;
+}
+.spaceup
+{
+   margin-top:20px;
+   padding-top:20px;
+}
+
+footer h2{
+  font-size:20px;
+  color:#ccc;
+  font-weight: normal;
+}
+footer li, footer li a{
+  font-size:15px;
+  line-height:30px;
+  color:#fff !important;
+}
+.orangebg
+{
+  margin-top:20px;
+  margin-bottom:40px;
+  background-color:rgba(243,159, 0, 0.5);
+  background-size: 80%;
+  background-position: 0 0;
+  padding:20px;
+  
+}
+.orangeColor
+{
+  color:rgba(243,159, 0, 1);
+}
+@media(max-width:600px)
+{
+  .midCenter
+  {
+    width:100%;
+  }
+}
+
+.sky-form .icon-append, .sky-form .icon-prepend
+{
+  z-index:9999999;
+}
+.intl-tel-input
+{
+  width:100%;
+}
+.btn
+{
+    color:#fff !important;
+}
+.error
+{
+    color:#dd0000;
+}
+
+.tallBtn
+{
+    font-size:20px;
+}
+@media(max-width:640px)
+{
+  .storelinks
+  {
+    width:60px !important;
+  } 
+}

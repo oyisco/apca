@@ -1,0 +1,90 @@
+<!-- ////////////////////////////////////////////////////////////////////////////-->
+<html  xmlns:th="https://www.thymeleaf.org/">
+<body>
+<div th:fragment="functional-palliative-care">
+    <div class="table-responsive">
+        <table class="table entry-table table-bordered table-striped table-hover">
+            <thead>
+            <tr>
+                <th></th>
+                <th>APR-JUN</th>
+                <th>JUL-SEP</th>
+                <th>OCT-DEC</th>
+                <th>JAN-MAR</th>
+                <th>Total</th>
+                <th>Remarks</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>A functional  research network for PC in place in Africa</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_functional_research_pc', 'oct_dec', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_functional_research_pc', 'jan_mar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_functional_research_pc', 'apr_jun', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_functional_research_pc', 'jul_sept', 'none', 'none', true)}"></div ></td>
+
+                <td><p id="el1__none_total" class="totals"></p></td>
+            </tr>
+
+
+            <tr>
+                <td># of African PC research network task forces/committees formed during this period</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_africa_functional_research', 'oct_dec', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_africa_functional_research', 'jan_mar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_africa_functional_research', 'apr_jun', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_africa_functional_research', 'jul_sept', 'none', 'none', true)}"></div ></td>
+
+                <td><p id="el1__none_total" class="totals"></p></td>
+            </tr>
+
+            <tr>
+                <td># of organizations recruited in the research network during this period</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_organizations_recruited ', 'oct_dec', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_organizations_recruited', 'jan_mar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_organizations_recruited', 'apr_jun', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_organizations_recruited', 'jul_sept', 'none', 'none', true)}"></div ></td>
+
+                <td><p id="el1__none_total" class="totals"></p></td>
+            </tr>
+
+            <tr>
+                <td style="background-color:yellow;"># of members recruited in the research network during this period</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_members_recruited', 'oct_dec', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_members_recruited', 'jan_mar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_members_recruited', 'apr_jun', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_members_recruited', 'jul_sept', 'none', 'none', true)}"></div ></td>
+
+                <td><p id="el1__none_total" class="totals"></p></td>
+            </tr>
+
+            <tr>
+                <td># of active research network hubs during this period</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_active_research_work', 'oct_dec', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_active_research_work', 'jan_mar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_active_research_work', 'apr_jun', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_active_research_work', 'jul_sept', 'none', 'none', true)}"></div ></td>
+
+                <td><p id="el1__none_total" class="totals"></p></td>
+            </tr>
+
+            <tr>
+                <td>  # of new research collaborations established during this period</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_research_collaborations', 'oct_dec', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_research_collaborations', 'jan_mar', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_research_collaborations', 'apr_jun', 'none', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_research_collaborations', 'jul_sept', 'none', 'none', true)}"></div ></td>
+
+                <td><p id="el1__none_total" class="totals"></p></td>
+            </tr>
+
+
+
+
+            </tbody>
+        </table>
+    </div>
+</div >
+
+
+</body>
+</html>

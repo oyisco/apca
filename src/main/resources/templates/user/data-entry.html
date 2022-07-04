@@ -1,0 +1,357 @@
+<html class="loading" lang="en" data-textdirection="ltr" xmlns:th="https://www.thymeleaf.org/">
+	<head th:replace="includes/user/header :: header"  />
+	<link th:href="@{../public/app-assets/vendors/css/ui/jquery-ui.min.css}" rel="stylesheet" type="text/css" />
+	<link th:href="@{../public/assets/css/MonthPicker.min.css}" rel="stylesheet" type="text/css" />
+	 <link rel="stylesheet" type="text/css" th:href="@{../public/app-assets/css/plugins/loaders/loaders.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{../public/app-assets/css/core/colors/palette-loader.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{../public/app-assets/vendors/css/extensions/toastr.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{../public/app-assets/css/plugins/extensions/toastr.css}">
+  <body class="vertical-layout vertical-menu 2-columns   menu-expanded fixed-navbar" data-open="click" data-menu="vertical-menu" data-col="2-columns">
+
+    <!-- fixed-top-->
+	<div th:replace="includes/user/topbar :: topbar"  />
+
+<!-- query String -->
+    <!-- ////////////////////////////////////////////////////////////////////////////-->
+
+
+
+        <div th:replace="includes/user/navbar :: navbar"  />
+
+        </div>
+     <div class="app-content content">
+      <div class="content-wrapper">
+        <div class="content-header row">
+        </div>
+
+        <div class="content-body"><!-- Analytics charts -->
+            <div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-content">
+                <div class="card-body">
+
+	            <div class="card-header">
+
+		        	<!--<div class="loader-container">
+						<div class="ball-pulse loader-primary">
+							<div></div>
+							<div></div>
+							<div></div>
+						</div>
+					</div>-->
+	                <h4 class="form-section"><i class="fa fa-calendar-check-o"></i> Data Entry</h4>
+        			<div class="heading-elements">
+	                    <ul class="list-inline mb-0">
+	                        <!--<li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+	                        <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>-->
+	                        <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+	                        <!--<li><a data-action="close"><i class="ft-x"></i></a></li>-->
+	                    </ul>
+	                </div>
+                </div>
+
+	            <div class="card-content collpase show">
+	            <form action="" method="GET" id="dataEntryForm">
+	                <div class="card-body">
+
+                            <div class="row" style="margin-bottom:10px;">
+
+                                    <!--<label class="col-sm-4 col-md-2">Reporting date</label>
+                                    <div class="col-sm-4 col-md-3">
+                                        <input type="text" class="form-control form-control-sm datepicker" placeholder="Select reporting date" name="date" aria-controls="DataTables_Table_0">
+                                    </div>-->
+
+
+                                    <label class="col-sm-4 col-md-2">Reporting Year</label>
+                                    <div class="col-sm-4 col-md-3">
+                                       <div class="input-group" >
+                                        	<select class="form-control" id="year" name="year">
+												<option value="">Select Fiscal Year</option>
+												<option th:each="year : ${#numbers.sequence(#dates.year(#dates.createNow()), 1900)}" th:value="${year}" th:text="${year}">
+												  </option>
+
+                                        	</select >
+										</div>
+                                    </div>
+                                    <label class="col-sm-3 col-md-1">Country</label>
+                                    <div class="col-sm-4 col-md-3">
+                                       <div class="input-group" >
+                                        	<select class="form-control select2" id="country" name="country">
+												<option value="">Select country</option>
+												<th:block th:each="country : ${countries}">
+							          				<option th:value="${country.get('id')}" th:if="${role == 'admin' || misc.indexOf(countriesList, country.get('code'))}" th:text="${country.get('name')}"></option>
+							          			</th:block>
+
+                                        	</select >
+										</div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+							
+                            <div class="card-content">
+
+                                    <div class="card-body" th:with="showTab=${false}">
+
+									
+							<div class="tabbable">
+							<ul class="nav nav-tabs nav-top-border no-hover-bg ">
+								<li class="nav-item" th:if="${role == 'admin' || modulesList.indexOf('indicator') > -1}">
+									<a  th:class="'nav-link '+${misc.tabVisible ? '' : 'active show'}"  id="baseVerticalLeft1-tab1" data-toggle="tab" aria-controls="tabVerticalLeft11" href="#tabVerticalLeft11" aria-expanded="true">
+										Indicator</a>
+										 
+										<div th:remove="tag" th:utext="${misc.setVisibilityVar(true)}"></div >
+								</li>
+								<li class="nav-item" th:if="${role == 'admin' || modulesList.indexOf('service_delivery') > -1}">
+									<a th:class="'nav-link '+${(misc.tabVisible == true) ? '' : 'active show'}" id="service-delivery-tab2" data-toggle="tab" aria-controls="service-delivery" href="#service-delivery" aria-expanded="false">
+										Strategic Objective#2; To provide leadership and coordination for <br>
+										palliative care integration into health policies,education programmes <br>
+										and health services in Africa Service Delivery</a>
+										 
+										 <div th:remove="tag" th:utext="${misc.setVisibilityVar(true)}"></div >
+								</li>
+
+                                <li class="nav-item" th:if="${role == 'admin' || modulesList.indexOf('policy') > -1}">
+                                    <a th:class="'nav-link '+${(misc.tabVisible == true) ? '' : 'active show'}" id="policy-tab2" data-toggle="tab" aria-controls="policy" href="#policy" aria-expanded="false">Policy</a>
+                                    <span  th:with="showTab=${true}"></span >
+                                    <div th:remove="tag" th:utext="${misc.setVisibilityVar(true)}"></div >
+                                </li>
+
+								<li class="nav-item" th:if="${role == 'admin' || modulesList.indexOf('medication_technology') > -1}">
+									<a th:class="'nav-link '+${(misc.tabVisible == true) ? '' : 'active show'}" id="medication-technology-tab2" data-toggle="tab" aria-controls="medication-technology" href="#medication-technology" aria-expanded="false">Medication Technology</a>
+									 <div th:remove="tag" th:utext="${misc.setVisibilityVar(true)}"></div >
+								</li>
+
+								<li class="nav-item" th:if="${role == 'admin' || modulesList.indexOf('education') > -1}">
+									<a th:class="'nav-link '+${(misc.tabVisible == true) ? '' : 'active show'}" id="education-tab2" data-toggle="tab" aria-controls="education" href="#education" aria-expanded="false">Education</a>
+									 <div th:remove="tag" th:utext="${misc.setVisibilityVar(true)}"></div >
+								</li>
+
+								<li class="nav-item" th:if="${role == 'admin' || modulesList.indexOf('african_palliative_care') > -1}">
+
+									<a th:class="'nav-link '+${(misc.tabVisible == true) ? '' : 'active show'}" id="functional-palliative-care-tab2" data-toggle="tab" aria-controls="functional-palliative-care" href="#functional-palliative-care" aria-expanded="false">
+										SO#3;To develop an evidence<br> base for palliative
+										<br>care in Africa
+										A functional<br>African palliative care <br> research network in place</a>
+										 <div th:remove="tag" th:utext="${misc.setVisibilityVar(true)}"></div >
+								</li>
+
+								<li class="nav-item" th:if="${role == 'admin' || modulesList.indexOf('agenda_for_pc') > -1}">
+									<a th:class="'nav-link '+${(misc.tabVisible == true) ? '' : 'active show'}" id="research-agenda-tab2" data-toggle="tab" aria-controls="research-agenda" href="#research-agenda" aria-expanded="false">
+										An established <br>
+										research agenda
+										for PC that is <br>
+										being implemented</a>
+										<div th:remove="tag" th:utext="${misc.setVisibilityVar(true)}"></div >
+								</li>
+
+
+
+								<li class="nav-item" th:if="${role == 'admin' || modulesList.indexOf('knowledge_palliative_care') > -1}">
+									<a th:class="'nav-link '+${(misc.tabVisible == true) ? '' : 'active show'}" id="improved-tab2" data-toggle="tab" aria-controls="improved" href="#improved" aria-expanded="false">
+										Improved skills <br>
+										and knowledge of
+										of palliative care  <br>
+										research in Africa</a>
+										<div th:remove="tag" th:utext="${misc.setVisibilityVar(true)}"></div >
+								</li>
+
+								<li class="nav-item" th:if="${role == 'admin' || modulesList.indexOf('web_base_pc_learning_house') > -1}">
+									<a th:class="'nav-link '+${(misc.tabVisible == true) ? '' : 'active show'}" id="web-base-tab2" data-toggle="tab" aria-controls="web-base" href="#web-base" aria-expanded="false">
+										A functional web<br>
+										abased PC clearing <br>
+										house  <br>
+										<div th:remove="tag" th:utext="${misc.setVisibilityVar(true)}"></div >
+									</a>
+								</li>
+
+								<li class="nav-item" th:if="${role == 'admin' || modulesList.indexOf('management_leadership_framework') > -1}">
+
+									<a th:class="'nav-link '+${(misc.tabVisible == true) ? '' : 'active show'}" id="apca-management-tab2" data-toggle="tab" aria-controls="apca-management" href="#apca-management" aria-expanded="false">
+										SO#4;
+										SO#3;To develop and implement<br> a financial sustainability <br>framework for APCA
+										A functional APCA <br>management and <br>leadership framework</a>
+										 <span  th:with="showTab=${true}"></span >
+								</li>
+								<li class="nav-item" th:if="${role == 'admin' || modulesList.indexOf('human_resource_management') > -1}">
+
+									<a th:class="'nav-link '+${(misc.tabVisible == true) ? '' : 'active show'}" id="human-resource-tab2" data-toggle="tab" aria-controls="human-resource" href="#human-resource" aria-expanded="false">
+										Updated and functional <br>
+										Human resources management<br>
+										development strategy</a>
+										<div th:remove="tag" th:utext="${misc.setVisibilityVar(true)}"></div >
+								</li>
+
+								<li th:class="'nav-link '+${(misc.tabVisible == true) ? '' : 'active show'}" th:if="${role == 'admin' || modulesList.indexOf('partnership_policy_strategy') > -1}">
+
+									<a class="nav-link" id="partnershipe-policy-tab2" data-toggle="tab" aria-controls="partnershipe-policy" href="#partnershipe-policy" aria-expanded="false">
+										A functional partnership <br>
+										policy and strategy in place
+									</a>
+									<div th:remove="tag" th:utext="${misc.setVisibilityVar(true)}"></div >
+								</li>
+
+								<li th:class="'nav-link '+${(misc.tabVisible == true) ? '' : 'active show'}" th:if="${role == 'admin' || modulesList.indexOf('develop_sustainable_finance_framework') > -1}">
+
+									<a class="nav-link" id="developed-sustainable-tab2" data-toggle="tab" aria-controls="developed-sustainable" href="#developed-sustainable" aria-expanded="false">
+										A developed and sustainable <br>
+										financial framework for APCA
+									</a>
+									<div th:remove="tag" th:utext="${misc.setVisibilityVar(true)}"></div >
+								</li>
+
+							</ul>
+							</div>
+
+							<div th:remove="tag" th:utext="${misc.setVisibilityVar(false)}"></div >
+							
+							<div class="tab-content px-1 pt-1">
+								<div role="tabpanel"  th:class="'tab-pane '+${misc.tabVisible ? '' : 'active show'}"   id="tabVerticalLeft11" aria-expanded="true" aria-labelledby="baseVerticalLeft1-tab1" th:if="${role == 'admin' || modulesList.indexOf('indicator') > -1}">
+									<div th:replace="includes/user/indicator :: indicator" />
+									<div th:remove="tag" th:utext="${misc.setVisibilityVar(true)}"></div >
+								</div>
+								<div th:class="'tab-pane '+${misc.tabVisible ? '' : 'active show'}"  id="service-delivery" aria-labelledby="service-delivery-tab2" th:if="${role == 'admin' || modulesList.indexOf('service_delivery') > -1}">
+									<div th:replace="includes/user/service-delivery :: delivery" />
+									<div th:remove="tag" th:utext="${misc.setVisibilityVar(true)}"></div >
+								</div>
+
+                                <div th:class="'tab-pane '+${misc.tabVisible ? '' : 'active show'}"  id="policy" aria-labelledby="policy-tab2" th:if="${role == 'admin' || modulesList.indexOf('policy') > -1}">
+                                    <div th:replace="includes/user/policy :: policy" />
+                                    <div th:remove="tag" th:utext="${misc.setVisibilityVar(true)}"></div >
+                                </div>
+
+								<div  th:class="'tab-pane '+${misc.tabVisible ? '' : 'active show'}"  id="medication-technology" aria-labelledby="medication-technology-tab2" th:if="${role == 'admin' || modulesList.indexOf('medication_technology') > -1}">
+									<div th:replace="includes/user/medication-technology :: medication-technology" />
+									<div th:remove="tag" th:utext="${misc.setVisibilityVar(true)}"></div >
+								</div >
+
+								<div th:class="'tab-pane '+${misc.tabVisible ? '' : 'active show'}"  id="education" aria-labelledby="education-tab2" th:if="${role == 'admin' || modulesList.indexOf('education') > -1}">
+									<div th:replace="includes/user/education :: education" />
+									<div th:remove="tag" th:utext="${misc.setVisibilityVar(true)}"></div >
+								</div>
+
+								<div th:class="'tab-pane '+${misc.tabVisible ? '' : 'active show'}"  id="functional-palliative-care" aria-labelledby="functional-palliative-care-tab2" th:if="${role == 'admin' || modulesList.indexOf('african_palliative_care') > -1}">
+									<div th:replace="includes/user/africa_palliative_care :: functional-palliative-care" />
+									<div th:remove="tag" th:utext="${misc.setVisibilityVar(true)}"></div >
+								</div>
+
+								<div th:class="'tab-pane '+${misc.tabVisible ? '' : 'active show'}"  id="research-agenda" aria-labelledby="research-agenda-tab2" th:if="${role == 'admin' || modulesList.indexOf('agenda_for_pc') > -1}">
+									<div th:replace="includes/user/research_agenda :: research_agenda" />
+									<div th:remove="tag" th:utext="${misc.setVisibilityVar(true)}"></div >
+								</div>
+
+								<div th:class="'tab-pane '+${misc.tabVisible ? '' : 'active show'}"  id="improved" aria-labelledby="improved-tab2" th:if="${role == 'admin' || modulesList.indexOf('knowledge_palliative_care') > -1}">
+									<div th:replace="includes/user/improve_knowledge :: improve_knowledge" />
+									<div th:remove="tag" th:utext="${misc.setVisibilityVar(true)}"></div >
+								</div>
+
+								<div th:class="'tab-pane '+${misc.tabVisible ? '' : 'active show'}"  id="web-base" aria-labelledby="web-base-tab2" th:if="${role == 'admin' || modulesList.indexOf('web_base_pcc_learning_house') > -1}">
+									<div th:replace="includes/user/web_base_pc :: web_base_pc" />
+									<div th:remove="tag" th:utext="${misc.setVisibilityVar(true)}"></div >
+								</div>
+
+								<div th:class="'tab-pane '+${misc.tabVisible ? '' : 'active show'}"  id="apca-management" aria-labelledby="apca-management-tab2" th:if="${role == 'admin' || modulesList.indexOf('data_demand_information_use') > -1}">
+									<div th:replace="includes/user/APCA_management :: apca_management" />
+									<div th:remove="tag" th:utext="${misc.setVisibilityVar(true)}"></div >
+								</div>
+
+								<div th:class="'tab-pane '+${misc.tabVisible ? '' : 'active show'}"  id="human-resource" aria-labelledby="human-resource-tab2" th:if="${role == 'admin' || modulesList.indexOf('management_leadership_framework') > -1}">
+									<div th:replace="includes/user/humman_resources :: humanresource" />
+									<div th:remove="tag" th:utext="${misc.setVisibilityVar(true)}"></div >
+								</div>
+
+								<div th:class="'tab-pane '+${misc.tabVisible ? '' : 'active show'}"  id="partnershipe-policy" aria-labelledby="partnershipe-policy-tab2" th:if="${role == 'admin' || modulesList.indexOf('partnership_policy_strategy') > -1}">
+									<div th:replace="includes/user/partnership_policy :: partnership" />
+									<div th:remove="tag" th:utext="${misc.setVisibilityVar(true)}"></div >
+								</div>
+								<div th:class="'tab-pane '+${misc.tabVisible ? '' : 'active show'}"  id="developed-sustainable" aria-labelledby="developed-sustainable-tab2" th:if="${role == 'admin' || modulesList.indexOf('develop_sustainable_finance_framework') > -1}">
+									<div th:replace="includes/user/developed_sustainable :: developed" />
+									<div th:remove="tag" th:utext="${misc.setVisibilityVar(true)}"></div >
+								</div>
+
+
+
+
+							</div>
+
+              </div   >
+
+                        </div>
+                    	</form>
+	                </div>
+	                <div class="row">
+	                	<div class="col-sm-12">
+	                		<button  class="btn btn-success pull-right" href="javascript:void(0);" id="saveMonthly"><class="fa fa-save"></i>Save</button  >
+	                	</div >
+	                </div >
+	            </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--/ Analytics charts -->
+
+
+<!-- Analytics map based session -->
+
+<!-- Bounce Rate & Mobile Device View -->
+
+<!-- Audience by country -->
+<!--  -->
+
+        </div>
+      </div>
+      <div th:replace="includes/user/footer :: footer"  />
+    </div>
+    <!-- ////////////////////////////////////////////////////////////////////////////-->
+
+	<script th:src="@{../public/app-assets/js/scripts/extensions/toastr.js}" type="text/javascript"></script>
+	<script th:src="@{../public/app-assets/vendors/js/extensions/toastr.min.js}"></script>
+	<script th:src="@{../public/assets/js/saveScript.js}" type="text/javascript"></script>
+	<script type="text/javascript" th:src="@{../public/assets/js/jquery.validate.min.js}"></script>
+	<script type="text/javascript" th:src="@{../public/app-assets/vendors/js/ui/jquery-ui.min.js}"></script>
+	<script type="text/javascript" th:src="@{../public/assets/js/validationScript.js}"></script>
+	<script type="text/javascript" th:src="@{../public/assets/js/MonthPicker.js}"></script>
+	<script type="text/javascript" th:src="@{../public/assets/js/miscScript.js}"></script>
+	<script th:inline="javascript">
+	/*<![CDATA[*/
+
+	    var validationDataString = /*[[${validations}]]*/ '';
+	/*]]>*/
+	</script>
+	<script type="text/javascript">
+	var switchType = "spoke";
+	    var moduleId = 1;
+	    var allowAll = false;
+		var periodType = "monthly";
+		var validationData = JSON.parse(validationDataString);
+
+
+		validateMonthlycPMTCT();
+
+		$(document).ready(function(e){
+			$('.select2Spoke').select2({
+		        dropdownParent: $('#changeSpokeModal')
+		    });
+			$("#changeSpokeModal").modal("show");
+
+			$("#year").change(function(){
+				getRemoteData();
+			})
+			$("#country").change(function(){
+				
+				getRemoteData();
+			})
+          /*$('#reportingPeriod').MonthPicker({MaxMonth: 0, Button: false,callback:function(){
+					getRemoteData();
+
+				} });*/
+			//validateAddProviderCategory();
+		})
+	</script>
+  </body>
+</html>

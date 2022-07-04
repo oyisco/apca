@@ -1,0 +1,99 @@
+<html xmlns:th="https://www.thymeleaf.org/" >
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" th:href="@{../public/assets/css/style.css}">
+            <link rel="stylesheet" type="text/css" th:href="@{../public/app-assets/css/app.css}">
+                <link rel="stylesheet" type="text/css" th:href="@{../public/app-assets/css/vendors.css}">
+        <title>APCA</title>
+    </head>
+
+      <body class="vertical-layout vertical-menu 2-columns   menu-expanded fixed-navbar gridbody" style="background-color:#f4f4f4">
+		
+        <div class="content-body">
+       		 <div style="position:absolute; right:15px; top:15px;"><a th:href="@{../logout}" class="btn btn-info btn-sm">Logout</a></div >
+            <div class="row"  style="width:100%">
+                <div class="col-sm-12">
+                
+                    <div class="logo-area">
+                    	
+                        <img th:src="@{../public/images/logo.png}"/>
+                        <!--<h3>NDR Lite </h3>-->
+                        <p>What would you like to do</p>
+                        
+                        <div class="link-container">
+                            <div class="row" id='modulesArea'>
+                		            <div class="col-md-3 col-sm-6">
+                                        <a href="data-entry" class="welcome-link"><i class="fa fa-edit dark-red"></i></a>
+                                        <a href="data-entry" class="welcome-link3 btn btn-dark-red btn-lg">Data entry</a>
+                                    </div>
+<!--                                    <div class="col-md-3 col-sm-6">-->
+<!--                                        <a href="#" class="welcome-link"><i class="fa fa-bar-chart info"></i></a>-->
+<!--                                        <a href="#" class="welcome-link3 btn btn-info btn-lg">View Reports</a>-->
+<!--                                    </div>-->
+                                    <div class="col-md-3 col-sm-6">
+                                        <a href="dashboard" class="welcome-link"><i class="fa fa-pie-chart success"></i></a>
+                                        <a href="dashboard" class="welcome-link3 btn btn-success btn-lg">Dashboard</a>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6">
+                                        <a href="view-users" class="welcome-link"><i class="fa fa-cog purple"></i></a>
+                                        <a href="view-users" class="welcome-link3 btn btn-purple btn-lg">Administration</a>
+                                    </div>
+
+                                <div class="col-md-3 col-sm-6">
+                                    <a href="data-entry" class="welcome-link"><i class="fa fa-calendar-times-o blue"></i></a>
+                                    <a href="landing-page" class="welcome-link3 btn btn-blue btn-lg">Landing Page</a>
+                                </div>
+                            
+                                
+                            </div>  
+                           
+                           
+                        </div  >
+                            
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <footer><p class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2"><span class=" d-block d-md-inline-block">Copyright 2021  &copy; APCA dashboard, Designed by Droplets. All rights reserved. v1.0.1</span><span class="float-md-right d-block d-md-inline-blockd-none d-lg-block"></span></p></footer>
+    <script type="text/javascript" th:src="@{../public/app-assets/js/core/libraries/jquery.min.js}"></script>
+    <script type="text/javascript">
+    	var totalModules = 0;
+    	var hiddenModules = "";
+    	var modulesVisible = false;
+    	$(document).ready(function(){
+			$(".module").each(function(index, element){
+				if(totalModules >=6)
+				{
+					hiddenModules += $('<div>').append($(element).clone()).html();
+					//hiddenModules += $(element).html();
+					$(element).remove();
+					$("#toggleHiddenModules").removeClass("hidden");
+				}
+				totalModules++;	
+	
+			});
+			
+			$("#modulesArea2").html(hiddenModules);
+			$("#toggleHiddenModules").click(function(){
+				//$("#modulesArea2").slideToggle();
+				if(modulesVisible == false)
+				{
+					$("#modulesArea2").slideDown();
+					modulesVisible = true;
+					$("#toggleHiddenModules").html("<i class='fa fa-caret-up fa-2x'></i>")
+					
+					 $("html, body").animate({ scrollTop: $(window).height()}, 600);
+				}
+				else{
+					$("#modulesArea2").slideUp();
+					modulesVisible = false;
+					$("#toggleHiddenModules").html("<i class='fa fa-caret-down fa-2x'></i>")
+				}
+			})
+		})
+    </script>
+    
+    </body>
+</html >

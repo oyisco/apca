@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet author="user10 (generated)" id="1636286695387-5">
+        <createSequence sequenceName="roles_id_seq"/>
+    </changeSet>
+
+    <changeSet author="user10 (generated)" id="1636286695387-7">
+        <createSequence sequenceName="users_id_seq"/>
+    </changeSet>
+
+    <changeSet author="user10 (generated)" id="1636286695387-12">
+        <createTable tableName="roles">
+            <column autoIncrement="true" name="id" type="SERIAL">
+                <constraints primaryKey="true" primaryKeyName="roles_pkey"/>
+            </column>
+            <column name="name" type="VARCHAR(600)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="user10 (generated)" id="1636286695387-14">
+        <createTable tableName="user_roles">
+            <column name="id" type="UUID">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="user_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="role_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modules" type="TEXT">
+            </column>
+            <column name="countries" type="TEXT">
+            </column>
+
+        </createTable>
+    </changeSet>
+    <changeSet author="user10 (generated)" id="1636286695387-15">
+        <createTable tableName="users">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="users_pkey"/>
+            </column>
+            <column name="password" type="VARCHAR(255)"/>
+            <column name="username" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <!--    <changeSet author="user10 (generated)" id="1636286695387-16">-->
+    <!--        <addPrimaryKey columnNames="user_id, role_id" constraintName="user_roles_pkey" tableName="user_roles"/>-->
+    <!--    </changeSet>-->
+    <!--    <changeSet author="user10 (generated)" id="1636286695387-17">-->
+    <!--        <addUniqueConstraint columnNames="username" constraintName="ukr43af9ap4edm43mmtq01oddj6" tableName="users"/>-->
+    <!--    </changeSet>-->
+
+
+    <changeSet id="20211019005923-07" author="user10">
+        <createTable tableName="aggregations">
+            <column name="id" type="UUID">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="fy_period_year" type="VARCHAR(255)"/>
+            <column name="data" type="jsonb">
+                <constraints nullable="false"/>
+            </column>
+            <column name="type" type="VARCHAR(255)"/>
+
+            <column name="country_id" type="bigint"/>
+
+            <column name="user_id" type="bigint"/>
+
+
+        </createTable>
+
+    </changeSet>
+
+
+    <changeSet author="user10 (generated)" id="1636286695387-20">
+        <addForeignKeyConstraint baseColumnNames="role_id" baseTableName="user_roles"
+                                 constraintName="fkh8ciramu9cc9q3qcqiv4ue8a6" deferrable="false"
+                                 initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
+                                 referencedColumnNames="id" referencedTableName="roles"/>
+    </changeSet>
+    <changeSet author="user10 (generated)" id="1636286695387-21">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="user_roles"
+                                 constraintName="fkhfh9dx7w3ubf1co1vdev94g3f" deferrable="false"
+                                 initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
+                                 referencedColumnNames="id" referencedTableName="users"/>
+    </changeSet>
+
+    <changeSet author="user10 (generated)" id="20210120232001-01">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="country"/>
+            </not>
+        </preConditions>
+        <createTable tableName="country">
+            <column autoIncrement="true" name="id" type="bigint">
+                <constraints primaryKey="true" primaryKeyName="countryPK"/>
+            </column>
+            <column name="code" type="VARCHAR(240)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <loadData encoding="UTF-8"
+                  file="db/changelog/countries.csv"
+                  separator=";"
+                  tableName="country"/>
+    </changeSet>
+
+    <changeSet id="20211019005923-41" author="user10">
+        <createTable tableName="landing_page_indicator">
+            <column name="id" type="UUID">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="year" type="VARCHAR(255)"/>
+            <column name="country" type="VARCHAR(255)"/>
+
+            <column name="partners" type="INT"/>
+            <column name="projects" type="INT"/>
+            <column name="individual" type="INT"/>
+            <column name="institutional" type="INT"/>
+            <column name="grants" type="INT"/>
+
+            <column name="scholarships" type="INT"/>
+            <column name="adult" type="INT"/>
+            <column name="children" type="INT"/>
+            <column name="facilities" type="INT"/>
+            <column name="countries" type="INT"/>
+
+            <column name="hmis" type="INT"/>
+            <column name="morphine" type="INT"/>
+            <column name="publications" type="INT"/>
+            <column name="palliative" type="INT"/>
+            <column name="research" type="INT"/>
+            <column name="total" type="INT"/>
+
+
+
+
+        </createTable>
+
+    </changeSet>
+
+</databaseChangeLog>

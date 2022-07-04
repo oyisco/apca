@@ -1,0 +1,149 @@
+<!-- ////////////////////////////////////////////////////////////////////////////-->
+<html  xmlns:th="https://www.thymeleaf.org/">
+<body>
+<div th:fragment="functional-palliative-care">
+<fieldset id="africa_palliative_care" class="data-field-set">
+    <div class="table-responsive">
+        <table class="table entry-table table-bordered table-striped table-hover">
+            <thead>
+            <tr>
+                <th></th>
+                <th>APR-JUN</th>
+                <th>JUL-SEP</th>
+                <th>OCT-DEC</th>
+                <th>JAN-MAR</th>
+                <th>Total</th>
+                <th style="width:300px">Remarks</th >
+                <th>Total SAR</th>
+                <th>FY 1</th>
+                <th>FY 2</th>
+                <th>FY 3</th>
+                <th>FY 4</th>
+                <th>Cummulative 5-year period</th>
+                <th style="width:200px">Remarks</th >
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>A functional  research network for PC in place in Africa</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_functional_research_pc', '',  'oct_dec',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_functional_research_pc', '', 'jan_mar', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_functional_research_pc', '', 'apr_jun', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_functional_research_pc', '', 'jul_sept',  'none', true)}"></div ></td>
+                <td><p id="elno_functional_research_pc__none_total" class="totals"></p></td>
+
+                <td><textarea  name="no_functional_research_pc" id="no_functional_research_pc" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_functional_research_pc_fy', '', 'total_sar',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_functional_research_pc_fy', '', 'fy1', 'none',  true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_functional_research_pc_fy', '', 'fy2', 'none',  true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_functional_research_pc_fy', '', 'fy3', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_functional_research_pc_fy', '', 'fy4', 'none', true)}"></div ></td>
+                <td><p id="elno_functional_research_pc_fy__none_total" class="totals"></p></td>
+                <td><textarea  name="no_supported_facilities_fy" id="no_supported_facilities_fy" class="form-control mini-textarea"></textarea></td>
+            </tr>
+
+
+            <tr>
+                <td># of African PC research network task forces/committees formed during this period</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_africa_functional_research', '', 'oct_dec', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_africa_functional_research', '','jan_mar', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_africa_functional_research', '', 'apr_jun', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_africa_functional_research', '', 'jul_sept', 'none', true)}"></div ></td>
+                <td><p id="elno_africa_functional_research__none_total" class="totals"></p></td>
+
+                <td><textarea  name="no_africa_functional_research" id="no_africa_functional_research" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_africa_functional_research_fy', '', 'total_sar','none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_africa_functional_research_fy', '', 'fy1', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_africa_functional_research_fy', '', 'fy2', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_africa_functional_research_fy', '', 'fy3', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_africa_functional_research_fy', '', 'fy4', 'none', true)}"></div ></td>
+                <td><p id="elno_africa_functional_research_fy__none_total" class="totals"></p></td>
+                <td><textarea  name="no_africa_functional_research_fy" id="no_africa_functional_research_fy" class="form-control mini-textarea"></textarea></td>
+            </tr>
+
+            <tr>
+                <td># of organizations recruited in the research network during this period</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_organizations_recruited ', '', 'oct_dec', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_organizations_recruited', '', 'jan_mar', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_organizations_recruited', '', 'apr_jun', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_organizations_recruited', '', 'jul_sept', 'none', true)}"></div ></td>
+                <td><p id="elno_organizations_recruited__none_total" class="totals"></p></td>
+
+                <td><textarea  name="no_organizations_recruited" id="no_organizations_recruited" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_organizations_recruited_fy', '', 'total_sar',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_organizations_recruited_fy', '', 'fy1',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_organizations_recruited_fy', '', 'fy2',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_organizations_recruited_fy', '', 'fy3', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_organizations_recruited_fy', '', 'fy4',  'none', true)}"></div ></td>
+                 <td><p id="elno_organizations_recruited_fy__none_total" class="totals"></p></td>
+                <td><textarea  name="no_organizations_recruited_fy" id="no_organizations_recruited_fy" class="form-control mini-textarea"></textarea></td>
+            </tr>
+
+            <tr>
+                <td style="background-color:yellow;"># of members recruited in the research network during this period</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_members_recruited', '', 'oct_dec',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_members_recruited', '', 'jan_mar',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_members_recruited', '', 'apr_jun','none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_members_recruited',  '','jul_sept',  'none', true)}"></div ></td>
+                <td><p id="elno_members_recruited__none_total" class="totals"></p></td>
+
+                <td><textarea  name="no_members_recruited" id="no_members_recruited" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_members_recruited_fy', '', 'total_sar',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_members_recruited_fy', '', 'fy1', 'none',  true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_members_recruited_fy',  '','fy2', 'none',  true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_members_recruited_fy', '', 'fy3', 'none',  true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_members_recruited_fy', '', 'fy4', 'none',  true)}"></div ></td>
+                <td><p id="no_members_recruited_fy" class="totals"></p></td>
+                <td><textarea  name="no_members_recruited_fy" id="no_members_recruited_fy" class="form-control mini-textarea"></textarea></td>
+            </tr>
+
+            <tr>
+                <td># of active research network hubs during this period</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_active_research_work', '', 'oct_dec',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_active_research_work', '', 'jan_mar',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_active_research_work', '', 'apr_jun',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_active_research_work', '', 'jul_sept',  'none', true)}"></div ></td>
+
+                <td><p id="elno_active_research_work__none_total" class="totals"></p></td>
+
+                <td><textarea  name="no_active_research_work" id="no_active_research_work" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_active_research_work_fy', '','total_sar',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_active_research_work_fy', '', 'fy1', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_active_research_work_fy', '', 'fy2',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_active_research_work_fy', '', 'fy3',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_active_research_work_fy', '', 'fy4', 'none', true)}"></div ></td>
+                <td><p id="elno_active_research_work_fy__none_total" class="totals"></p></td>
+                <td><textarea  name="no_active_research_work_fy" id="no_active_research_work_fy" class="form-control mini-textarea"></textarea></td>
+            </tr>
+
+            <tr>
+                <td>  # of new research collaborations established during this period</td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_research_collaborations', '', 'oct_dec', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_research_collaborations', '', 'jan_mar',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_research_collaborations', '', 'apr_jun',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_research_collaborations', '', 'jul_sept',  'none', true)}"></div ></td>
+
+                <td><p id="elno_research_collaborations__none_total" class="totals"></p></td>
+                
+                <td><textarea  name="no_functional_research_pc" id="no_research_collaborations" class="form-control mini-textarea"></textarea></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_research_collaborations_fy', '', 'total_sar',  'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_research_collaborations_fy', '', 'fy1', 'none',  true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_research_collaborations_fy', '', 'fy2', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_research_collaborations_fy', '', 'fy3', 'none', true)}"></div ></td>
+                <td><div th:remove="tag" th:utext="${misc.createInput('no_research_collaborations_fy', '', 'fy4', 'none', true)}"></div ></td>
+                <td><p id="elno_research_collaborations_fy__none_total" class="totals"></p></td>
+                <td><textarea  name="no_research_collaborations_fy" id="no_research_collaborations_fy" class="form-control mini-textarea"></textarea></td>
+            </tr>
+
+
+
+
+            </tbody>
+        </table>
+    </div>
+</fieldset>
+</div >
+
+
+</body>
+</html>

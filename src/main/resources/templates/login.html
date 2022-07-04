@@ -1,0 +1,92 @@
+<html class="loading" lang="en" data-textdirection="ltr" xmlns:th="https: //www.thymeleaf.org/">
+<head th:replace="includes/header :: header_frag"  /> 
+  <body class="vertical-layout vertical-content-menu 1-column   menu-expanded blank-page blank-page" data-open="click" data-menu="vertical-content-menu" data-col="1-column">
+    <!-- ////////////////////////////////////////////////////////////////////////////-->
+    <div class="app-content content">
+      <div class="content-wrapper">
+        <div class="content-header row">
+        </div>
+        <div class="content-body"><section class="flexbox-container">
+    <div class="col-12 d-flex align-items-center justify-content-center">
+        <div class="col-md-4 col-sm-12 box-shadow-2 p-0">
+            <div class="card border-grey border-lighten-3 m-0">
+                <div class="card-header border-0">
+                    <div class="card-title text-center">
+                        <div class="p-1"><img th:src="@{public/images/logo.png}" class="login_logo" alt="branding logo" style="border-radius:5px;"></div>
+                    </div>
+                    <h6 class="card-subtitle line-on-side text-muted text-center font-small-3 pt-2"><span>Login</span></h6>
+                </div>
+                <div class="card-content">
+                    <div class="card-body">
+                        <div class="alert alert-danger alert-dismissible mb-2 hidden" id="loginError" role="alert">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">×</span>
+							</button>
+							<strong>Username/password invalid</strong>
+                        </div>
+
+                        <div class="alert alert-success alert-dismissible mb-2 hidden" id="loginSuccess" role="alert">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">×</span>
+							</button>
+							<strong>Login successful</strong>
+                        </div>
+                        <form class="form-horizontal form-simple" action="" method="POST" novalidate>
+                            <fieldset class="form-group position-relative has-icon-left mb-0">
+                                <input type="text" class="form-control form-control-lg input-lg" value="" id="username" name="username" placeholder="Your Username" required>
+                                <div class="form-control-position">
+                                    <i class="ft-user" style="line-height:35px;"></i>
+                                </div>
+                            </fieldset>
+                            <fieldset class="form-group position-relative has-icon-left">
+                                <input type="password" class="form-control form-control-lg input-lg" name="password" id="password" placeholder="Enter Password" required>
+                                <div class="form-control-position">
+                                    <i class="fa fa-key" style="line-height:35px;"></i>
+                                </div>
+                            </fieldset>
+                            <div class="form-group row">
+                                <div class="col-md-6 col-12 text-center text-md-left">
+                                    <fieldset>
+                                        <input type="checkbox" id="remember-me" class="chk-remember">
+                                        <label for="remember-me"> Remember Me</label>
+                                    </fieldset>
+                                </div>
+                                <!--<div class="col-md-6 col-12 text-center text-md-right"><a href="/auth/recover-password" class="card-link">Forgot Password?</a></div>-->
+                            </div>
+                            <button type="button" class="btn btn-purple  dark-text btn-lg btn-block" id="login"><i class="ft-unlock"></i> Login</button>
+                        </form>
+                    </div>
+                </div>
+                <!--<div class="card-footer">
+                    <div class="">
+                        <p class="float-sm-left text-center m-0"><a href="/auth/recover-password" class="card-link">Recover password</a></p>
+                        <p class="float-sm-right text-center m-0">A delivery company? <a href="/delivery-company-registration" class="card-link">Sign Up here</a></p>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+    </div>
+</section>
+
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" th:src="@{/public/assets/js/constants.js}"></script>
+   <div th:replace="includes/footer :: footer"  />
+   <script type="text/javascript"  th:src="@{/public/assets/js/homeScript.js}"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("body").on('keydown', 'input', function(e) {
+			  if (e.keyCode === 13) {
+				
+			    e.preventDefault();
+			  	e.stopImmediatePropagation();
+			    //Do your stuff...
+			    $("#login").click();
+			  }
+			});
+			//
+		})
+	</script>
+  </body>
+</html>

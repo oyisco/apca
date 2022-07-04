@@ -1,0 +1,513 @@
+<html class="loading" lang="en" data-textdirection="ltr" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="includes/user/header :: header"/>
+<link th:href="@{../public/app-assets/vendors/css/ui/jquery-ui.min.css}" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" th:href="@{../public/app-assets/css/core/colors/palette-loader.css}">
+<link rel="stylesheet" type="text/css" th:href="@{../public/app-assets/vendors/css/extensions/toastr.css}">
+<link rel="stylesheet" type="text/css" th:href="@{../public/app-assets/css/plugins/extensions/toastr.css}">
+<link rel="stylesheet" type="text/css" th:href="@{../public/assets2/css/responsive.css}">
+<link rel="stylesheet" type="text/css" th:href="@{../public/assets2/css/style.css}">
+<!-- <link rel="stylesheet" type="text/css" th:href="@{../public/assets2/css/select2.min.css}">
+<link rel="stylesheet" type="text/css" th:href="@{../public/assets2/css/vendors/bootstrap.css}"> -->
+
+<link rel="stylesheet" type="text/css" href="assets/css/select2.min.css">
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors/bootstrap.css">
+
+
+<!-- Responsive css-->
+<link rel="stylesheet" type="text/css" href="assets2/css/responsive.css">
+<link th:href="@{../public/assets/css/MonthPicker.min.css}" rel="stylesheet" type="text/css"/>
+<body class="vertical-layout vertical-menu 2-columns   menu-expanded fixed-navbar" data-open="click"
+      data-menu="vertical-menu" data-col="2-columns">
+
+<!-- fixed-top-->
+<div th:replace="includes/user/topbar :: topbar"/>
+
+<!-- query String -->
+<!-- ////////////////////////////////////////////////////////////////////////////-->
+
+
+<div th:replace="includes/user/navbar :: navbar"/>
+<div class="app-content content">
+    <div class="content-wrapper">
+        <div class="content-header row">
+        </div>
+
+        <div class="content-body"><!-- Analytics charts -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+
+                                <div class="card-header">
+
+                                    <!-- <h4 class="form-section"><i class="fa fa-bar-chart"></i> Dashboard</h4> -->
+                                    <div class="row">
+                                        <table class="table-striped" align="center" width= '80%' bgcolor="#7fffd4">
+                                                <tr>
+                                                    <td width = '25%' align="right" height="30"><b>Reporting Year</b></td>
+                                                    <td width = '25%' align="left" height="30">
+                                                        <select class="form-control" id="year" name="year" required>
+                                                            <option value="">Select Fiscal Year</option>
+                                                            <option th:each="year : ${#numbers.sequence(#dates.year(#dates.createNow()), 1900)}" th:value="${year}" th:text="${year}">
+                                                            </option>
+
+                                                        </select >
+                                                    </td>
+                                                    <td width = '15%' align="right" height="30"><b>Country</b></td>
+                                                    <td width = '25%' align="left" height="30">
+                                                        <select class="form-control" id="country" name="country" required>
+                                                            <option value="">Select country</option>
+                                                            <th:block th:each="country : ${countries}">
+                                                                <option th:value="${country.get('id')}" th:if="${role == 'admin' || misc.indexOf(countriesList, country.get('code'))}" th:text="${country.get('name')}"></option>
+                                                            </th:block>
+
+                                                        </select >
+                                                    </td>
+                                                    <td width="10%"></td>
+                                                </tr>
+                                            </table>
+
+
+
+                                       
+
+                                    </div>
+
+
+                                    <div class="heading-elements">
+                                        <ul class="list-inline mb-0">
+                                            <!--<li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>-->
+                                            <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                                            <!--<li><a data-action="close"><i class="ft-x"></i></a></li>-->
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12"><a href="javascript:void(0);" id="filterLanding"
+                                                              class="btn btn-info" style="float:right;">Filter</a></div>
+                                </div>
+
+                                <div class="card-content collpase show">
+                                    <div class="card-body">
+
+
+                                        <div class="row"
+                                             style="background-color:#efefef; padding:20px; padding-left:0; padding-right:0;">
+                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                                            <div class="b-b-primary border-5 border-0 card o-hidden">
+                                                <div class="custome-1-bg b-r-4 card-body">
+                                                    <div class="media align-items-center static-top-widget">
+                                                        <div class="media-body p-0">
+                                                            <span class="m-0">Number of Partners</span>
+                                                            <h4 class="mb-0 counter">
+                                                                <div id="numberPartnerDashbaord"></div>
+                                                                 <span class="badge badge-light-primary grow">
+                                                                <i data-feather="trending-up"></i></span>
+                                                            </h4>                                                      
+                                                        </div>
+                                                        <div class="align-self-center text-center">
+                                                            <i data-feather="database"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                                            <div class="b-b-danger border-5 border-0 card o-hidden">
+                                                <div class=" custome-2-bg  b-r-4 card-body">
+                                                    <div class="media static-top-widget">
+                                                        <div class="media-body p-0">
+                                                            <span class="m-0">Number of Completed</span>
+                                                            <h4 class="mb-0 counter"> 
+                                                                <div id="numberCompletedProjectsDashbaord"></div>
+                                                                <span class="badge badge-light-primary grow">
+                                                                    <i data-feather="trending-up"></i></span>
+                                                            </h4>
+                                                        </div>
+                                                        <div class="align-self-center text-center">
+                                                            <i data-feather="shopping-bag"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                                            <div class="b-b-secondary border-5 border-0  card o-hidden">
+                                                <div class=" custome-3-bg b-r-4 card-body">
+                                                    <div class="media static-top-widget">
+                                                        <div class="media-body p-0">
+                                                            <span class="m-0">Individual Membership</span>
+                                                            <h4 class="mb-0 counter">
+                                                                <div id="numberIndividualMembershipDashbaord"></div>
+                                                                <span class="badge badge-light-danger grow">
+                                                                    <i data-feather="trending-down"></i></span>
+                                                            </h4>
+                                                        </div>
+
+                                                        <div class="align-self-center text-center">
+                                                            <i data-feather="message-circle"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+
+
+
+
+
+                                        <div class="row"
+                                             style="background-color:#efefef; padding:20px; padding-left:0; padding-right:0;">
+
+                                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                                            <div class="b-b-primary border-5 border-0 card o-hidden">
+                                                <div class="custome-1-bg b-r-4 card-body">
+                                                    <div class="media align-items-center static-top-widget">
+                                                        <div class="media-body p-0">
+                                                            <span class="m-0">Institutional Membership
+</span>
+                                                            <h4 class="mb-0 counter">
+                                                                <div id="numberInstitutionalMembershipDashbaord"></div>
+                                                                <span class="badge badge-light-primary grow">
+                                                                <i data-feather="trending-up"></i></span>
+                                                            </h4>                                                      
+                                                        </div>
+                                                        <div class="align-self-center text-center">
+                                                            <i data-feather="database"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                                            <div class="b-b-danger border-5 border-0 card o-hidden">
+                                                <div class=" custome-2-bg  b-r-4 card-body">
+                                                    <div class="media static-top-widget">
+                                                        <div class="media-body p-0">
+                                                            <span class="m-0">Small Grants</span>
+                                                            <h4 class="mb-0 counter"> 
+                                                                <div id="numberSmallGrantsAwarededDashbaord"></div>
+                                                                <span class="badge badge-light-primary grow">
+                                                                    <i data-feather="trending-up"></i></span>
+                                                            </h4>
+                                                        </div>
+                                                        <div class="align-self-center text-center">
+                                                            <i data-feather="shopping-bag"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                                            <div class="b-b-secondary border-5 border-0  card o-hidden">
+                                                <div class=" custome-3-bg b-r-4 card-body">
+                                                    <div class="media static-top-widget">
+                                                        <div class="media-body p-0">
+                                                            <span class="m-0">Educational Scholarships</span>
+                                                            <h4 class="mb-0 counter">
+                                                                <div id="numberEducationalScholarshipsAwarded"></div>
+                                                                <span class="badge badge-light-danger grow">
+                                                                    <i data-feather="trending-down"></i></span>
+                                                            </h4>
+                                                        </div>
+
+                                                        <div class="align-self-center text-center">
+                                                            <i data-feather="message-circle"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+
+
+
+                                        <div class="row"
+                                             style="background-color:#efefef; padding:20px; padding-left:0; padding-right:0;">
+
+                                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                                            <div class="b-b-primary border-5 border-0 card o-hidden">
+                                                <div class="custome-1-bg b-r-4 card-body">
+                                                    <div class="media align-items-center static-top-widget">
+                                                        <div class="media-body p-0">
+                                                            <span class="m-0">Adult Patients</span>
+                                                            <h4 class="mb-0 counter">
+                                                                <div id="numberAdultPatientsReceivingPalliativeCare"></div>
+                                                                <span class="badge badge-light-primary grow">
+                                                                <i data-feather="trending-up"></i></span>
+                                                            </h4>                                                      
+                                                        </div>
+                                                        <div class="align-self-center text-center">
+                                                            <i data-feather="database"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                                            <div class="b-b-danger border-5 border-0 card o-hidden">
+                                                <div class=" custome-2-bg  b-r-4 card-body">
+                                                    <div class="media static-top-widget">
+                                                        <div class="media-body p-0">
+                                                            <span class="m-0">Children (0-17 years)</span>
+                                                            <h4 class="mb-0 counter"> 
+                                                                <div id="numberChildren"></div>
+                                                                <span class="badge badge-light-primary grow">
+                                                                    <i data-feather="trending-up"></i></span>
+                                                            </h4>
+                                                        </div>
+                                                        <div class="align-self-center text-center">
+                                                            <i data-feather="shopping-bag"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                                            <div class="b-b-secondary border-5 border-0  card o-hidden">
+                                                <div class=" custome-3-bg b-r-4 card-body">
+                                                    <div class="media static-top-widget">
+                                                        <div class="media-body p-0">
+                                                            <span class="m-0">Number of Facilities</span>
+                                                            <h4 class="mb-0 counter">
+                                                                <div id="numberFacilitiesSupported"></div>
+                                                                <span class="badge badge-light-danger grow">
+                                                                    <i data-feather="trending-down"></i></span>
+                                                            </h4>
+                                                        </div>
+
+                                                        <div class="align-self-center text-center">
+                                                            <i data-feather="message-circle"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+
+
+                                       <div class="row"
+                                             style="background-color:#efefef; padding:20px; padding-left:0; padding-right:0;">
+
+                                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                                            <div class="b-b-primary border-5 border-0 card o-hidden">
+                                                <div class="custome-1-bg b-r-4 card-body">
+                                                    <div class="media align-items-center static-top-widget">
+                                                        <div class="media-body p-0">
+                                                            <span class="m-0">African Countries with Palliative Care Policies</span>
+                                                            <h4 class="mb-0 counter">
+                                                                <div id="numberAfricanCountrieswith"></div>
+                                                                <span class="badge badge-light-primary grow">
+                                                                <i data-feather="trending-up"></i></span>
+                                                            </h4>                                                      
+                                                        </div>
+                                                        <div class="align-self-center text-center">
+                                                            <i data-feather="database"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                                            <div class="b-b-danger border-5 border-0 card o-hidden">
+                                                <div class=" custome-2-bg  b-r-4 card-body">
+                                                    <div class="media static-top-widget">
+                                                        <div class="media-body p-0">
+                                                            <span class="m-0">Countries including PC indicators into National HMIS</span>
+                                                            <h4 class="mb-0 counter"> 
+                                                                <div id="numberCountriesincludingPCindicators"></div>
+                                                                <span class="badge badge-light-primary grow">
+                                                                    <i data-feather="trending-up"></i>9.5%</span>
+                                                            </h4>
+                                                        </div>
+                                                        <div class="align-self-center text-center">
+                                                            <i data-feather="shopping-bag"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                                            <div class="b-b-secondary border-5 border-0  card o-hidden">
+                                                <div class=" custome-3-bg b-r-4 card-body">
+                                                    <div class="media static-top-widget">
+                                                        <div class="media-body p-0">
+                                                            <span class="m-0">General Availability of Immediate-Release Oral Morphine in PHS</span>
+                                                            <h4 class="mb-0 counter">
+                                                                <div id="numberGeneralAvailabilityofImmediate"></div>
+                                                                <span class="badge badge-light-danger grow">
+                                                                    <i data-feather="trending-down"></i></span>
+                                                            </h4>
+                                                        </div>
+
+                                                        <!-- <div class="align-self-center text-center">
+                                                            <i data-feather="message-circle"></i>
+                                                        </div> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+
+                                                <div class="row"
+                                                   style="background-color:#efefef; padding:20px; padding-left:0; padding-right:0;">
+
+                                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                                            <div class="b-b-primary border-5 border-0 card o-hidden">
+                                                <div class="custome-1-bg b-r-4 card-body">
+                                                    <div class="media align-items-center static-top-widget">
+                                                        <div class="media-body p-0">
+                                                            <span class="m-0">Publications in Peer Reviewed Journals</span>
+                                                            <h4 class="mb-0 counter">
+                                                                <div id="numberPublicationsinPeer"></div>
+                                                                <span class="badge badge-light-primary grow">
+                                                                <i data-feather="trending-up"></i></span>
+                                                            </h4>                                                      
+                                                        </div>
+                                                        <div class="align-self-center text-center">
+                                                            <i data-feather="database"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                                            <div class="b-b-danger border-5 border-0 card o-hidden">
+                                                <div class=" custome-2-bg  b-r-4 card-body">
+                                                    <div class="media static-top-widget">
+                                                        <div class="media-body p-0">
+                                                            <span class="m-0">Number of Palliative Care PhDs in Africa</span>
+                                                            <h4 class="mb-0 counter"> 
+                                                                <div id="numberPalliativeCarePhDs"></div>
+                                                                <span class="badge badge-light-primary grow">
+                                                                    <i data-feather="trending-up"></i></span>
+                                                            </h4>
+                                                        </div>
+                                                        <div class="align-self-center text-center">
+                                                            <i data-feather="shopping-bag"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                                            <div class="b-b-secondary border-5 border-0  card o-hidden">
+                                                <div class=" custome-3-bg b-r-4 card-body">
+                                                    <div class="media static-top-widget">
+                                                        <div class="media-body p-0">
+                                                            <span class="m-0">Number of Research Network Membership</span>
+                                                            <h4 class="mb-0 counter">
+                                                                <div id="numberNetworkMembership"></div>
+                                                                <span class="badge badge-light-danger grow">
+                                                                    <i data-feather="trending-down"></i></span>
+                                                            </h4>
+                                                        </div>
+
+                                                        <div class="align-self-center text-center">
+                                                            <i data-feather="message-circle"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+
+
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+
+
+
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/ Analytics charts -->
+
+
+                <!-- Analytics map based session -->
+
+                <!-- Bounce Rate & Mobile Device View -->
+
+                <!-- Audience by country -->
+                <!--  -->
+
+            </div>
+        </div>
+        <div th:replace="includes/user/footer :: footer"/>
+    </div>
+    <!-- ////////////////////////////////////////////////////////////////////////////-->
+    <!--drkarim-->
+    <script type="text/javascript" th:src="@{../public/assets/js/feather.min.js}"></script>
+    <script type="text/javascript" th:src="@{../public/assets/js/feather-icon.js}"></script>
+
+    <script th:src="@{../public/assets/js/saveScript.js}"></script>
+    <script th:src="@{../public/app-assets/js/scripts/extensions/toastr.js}" type="text/javascript"></script>
+    <script th:src="@{../public/app-assets/vendors/js/extensions/toastr.min.js}"></script>
+    <script type="text/javascript" th:src="@{../public/assets/js/jquery.validate.min.js}"></script>
+    <script type="text/javascript" th:src="@{../public/assets/js/validationScript.js}"></script>
+    <script type="text/javascript" th:src="@{../public/app-assets/vendors/js/ui/jquery-ui.min.js}"></script>
+    <script type="text/javascript" th:src="@{../public/assets/js/weekPicker.js}"></script>
+    <script type="text/javascript" th:src="@{../public/assets/js/homeScript.js}"></script>
+    <script type="text/javascript" th:src="@{../public/assets/js/miscScript.js}"></script>
+
+
+    <script type="text/javascript" th:src="@{../public/assets/highcharts/highcharts/code/highcharts.js}"></script>
+    <script type="text/javascript" th:src="@{../public/assets/highcharts/scatter-label.js}"></script>
+    <script type="text/javascript" th:src="@{../public/assets/highcharts/highcharts/code/modules/data.js}"></script>
+    <script type="text/javascript"
+            th:src="@{../public/assets/highcharts/highcharts/code/modules/exporting.js}"></script>
+    <script type="text/javascript"
+            th:src="@{../public/assets/highcharts/highcharts/code/modules/accessibility.js}"></script>
+
+    <script th:src="@{../public/app-assets/vendors/js/extensions/jquery.knob.min.js}" type="text/javascript"></script>
+    <script th:src="@{../public/app-assets/js/scripts/extensions/knob.js}" type="text/javascript"></script>
+    <script th:src="@{../public/app-assets/vendors/js/charts/raphael-min.js}" type="text/javascript"></script>
+    <script th:src="@{../public/app-assets/vendors/js/charts/chart.min.js}" type="text/javascript"></script>
+    <script th:src="@{../public/app-assets/vendors/js/charts/jvector/jquery-jvectormap-2.0.3.min.js}"
+            type="text/javascript"></script>
+    <script th:src="@{../public/app-assets/vendors/js/charts/jvector/jquery-jvectormap-world-mill.js}"
+            type="text/javascript"></script>
+    <script th:src="@{../public/app-assets/data/jvector/visitor-data.js}" type="text/javascript"></script>
+    <script th:src="@{../public/app-assets/vendors/js/charts/echarts/echarts.js}" type="text/javascript"></script>
+    <script th:src="@{../public/app-assets/vendors/js/timeline/horizontal-timeline.js}" type="text/javascript"></script>
+    <script th:src="@{../public/app-assets/vendors/js/extensions/unslider-min.js}" type="text/javascript"></script>
+    <script th:src="@{../public/app-assets/vendors/js/extensions/dropzone.min.js}" type="text/javascript"></script>
+
+
+    <script type="text/javascript" th:src="@{../public/app-assets/vendors/js/ui/jquery-ui.min.js}"></script>
+    <script th:src="@{../public/app-assets/js/scripts/pages/dashboard-crm.js}" type="text/javascript"></script>
+    <script type="text/javascript" th:src="@{../public/assets/js/myCharts.js}"></script>
+
+
+    <script type="text/javascript">
+        var userType = "user";
+        $(document).ready(function () {
+
+            //once this page is loaded, get graph data
+
+        })
+    </script>
+</body>
+</html>
