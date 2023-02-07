@@ -48,7 +48,6 @@ public class LandingPageIndicatorResource {
             landingPageIndicators = landingPageRepository.findLandingPageIndicatorByYearAndCountry(year, countryId);
         }
 
-
         LandingPageResponse landingPageIndicator1 = new LandingPageResponse();
         landingPageIndicator1.setCountries(Objects.requireNonNull(landingPageIndicators).stream().map(LandingPageIndicator::getCountries).mapToInt(Integer::intValue).sum());
          landingPageIndicator1.setProjects( landingPageIndicators.stream().map(LandingPageIndicator::getProjects).mapToInt(Integer::intValue).sum());
@@ -76,7 +75,8 @@ public class LandingPageIndicatorResource {
 
 
     @GetMapping("/get-all-by-year-country")
-    public List<LandingPageResponse> getAllByYearAndCountryId(@RequestParam(name = "year") String year, @RequestParam(name = "countryId") String countryId) {
+    public List<LandingPageResponse> getAllByYearAndCountryId(@RequestParam(name = "year") String year, @RequestParam(name = "countryId") String countryId)
+    {
         return this.genericResponse(year, countryId);
     }
 

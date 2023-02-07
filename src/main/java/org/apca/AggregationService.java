@@ -13,6 +13,8 @@ import org.apca.request.ServerResponse;
 import org.apca.request.ServerResponse2;
 import org.springframework.stereotype.Service;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -47,6 +49,14 @@ public class AggregationService {
     }
 
     public ServerResponse getAggregationById(String id) {
+        try (FileReader fileReader = new FileReader(id)){
+            BufferedReader br = new BufferedReader(fileReader);
+
+        }catch (Exception e) {
+
+        }finally {
+
+        }
         Aggregations aggregations = this.aggregationRepository.findById(UUID.fromString(id))
                 .orElseThrow(() -> new ResourceException("id not found: " + id));
         return ServerResponse.builder()
@@ -62,6 +72,7 @@ public class AggregationService {
 
     private List<ServerResponse> convertEntityToServerResponse(String fyPeriod, String type) throws ResourceException {
         List<ServerResponse> serverResponses = new ArrayList<>();
+
         if (fyPeriod != null) {
             this.aggregationRepository.findAggregationsByFyPeriodYear(fyPeriod).forEach(aggregations1 -> serverResponses.add(ServerResponse.builder()
                     .data(Objects.requireNonNull(aggregations1).getData())

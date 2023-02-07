@@ -210,26 +210,7 @@ function saveSession(username, token, userId, firstTime, readOnly)
 		type:"GET",
 		data:{username:username, token:token, userId: userId, firstTime:firstTime, readOnly:readOnly},
 		success:function(response){
-			/*var data = JSON.parse(response);
-			if(data["roleType"] == "super")
-			{
-				window.location = "admin/view-users";
-			}
-			else if(data["roleType"] == "admin")
-			{
-				window.location = "admin/view-users";
-			}
-			else if(data["roleType"] == "funder")
-			{
-				window.location = "funder/dashboard";
-			}
-			else if(data["roleType"] == "ip")
-			{
-				window.location = "user/view-users";
-			}
-			else{
-				window.location = "user/welcome";
-			}*/
+
 			window.location = "user/welcome";
 			
 		},

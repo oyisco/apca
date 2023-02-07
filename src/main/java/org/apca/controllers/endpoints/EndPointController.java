@@ -1,27 +1,12 @@
 package org.apca.controllers.endpoints;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import org.apca.models.Misc;
+import org.json.JSONObject;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
-import org.apca.models.Misc;
-import org.json.JSONArray;
-import org.json.JSONObject;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.UUID;
+import java.util.*;
 
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -53,8 +38,6 @@ public class EndPointController {
         } else {
             role = "user";
         }
-
-
         //System.out.println(userRole.getString("roleType"));
         session.setAttribute("role", role);
         session.setAttribute("countries", countries);

@@ -28,4 +28,5 @@ public class Country implements Serializable, Persistable<Long> {
     public boolean isNew() {
         return id == null;
     }
+
 }

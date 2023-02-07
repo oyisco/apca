@@ -1,8 +1,10 @@
 package org.apca.web;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apca.domain.Country;
 import org.apca.domain.repositories.CountryRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,8 +19,8 @@ import java.util.List;
 @RequiredArgsConstructor
 @Slf4j
 public class CountryResource {
-
-    private final CountryRepository countryRepository;
+    @Autowired
+    private CountryRepository countryRepository;
 
     /**
      * GET  /countries : get all the countries.
@@ -32,22 +34,24 @@ public class CountryResource {
     }
 
     @GetMapping("/get-country-id/{id}")
-    public Country getSingleCountry( @RequestHeader("Authorization") String Authorization,@PathVariable Long id) {
-       // Country country = new Country();
+    public Country getSingleCountry(@RequestHeader("Authorization") String Authorization, @PathVariable Long id) {
+        // Country country = new Country();
         Country country = this.countryRepository.findById(id)
                 .orElseThrow(() -> new UsernameNotFoundException("ID NOT FOUND"));
 
         //LOG.debug("REST request to get all Countries");
         return country;
     }
+
     @GetMapping("/get-country-code/{code}")
-    public Country getSingleCountry( @RequestHeader("Authorization") String Authorization,@PathVariable String code) {
+    public Country getSingleCountry(@RequestHeader("Authorization") String Authorization, @PathVariable String code) {
         // Country country = new Country();
         Country country = this.countryRepository.findByCode(code)
                 .orElseThrow(() -> new UsernameNotFoundException("ID NOT FOUND"));
 
         //LOG.debug("REST request to get all Countries");
         return country;
+
     }
 
 }
